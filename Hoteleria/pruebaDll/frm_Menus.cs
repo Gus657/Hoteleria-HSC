@@ -17,7 +17,7 @@ namespace Hoteleria
 		{
 			InitializeComponent();
 			usuario = user;
-			string[] alias = { "Cod Area", "No. Camas","Estado" };
+			string[] alias = { "Cod Menu", "Nombre","Estado" };
 			navegador1.asignarAlias(alias);
 			navegador1.asignarSalida(this);
 			navegador1.asignarColorFondo(Color.LightBlue);
@@ -34,5 +34,10 @@ namespace Hoteleria
 			navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
 			navegador1.ObtenerIdAplicacion(aplicacionActiva);
 		}
-	}
+
+        private void Navegador1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

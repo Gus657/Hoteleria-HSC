@@ -17,7 +17,7 @@ namespace Hoteleria
 		{
 			InitializeComponent();
 			usuario = user;
-			string[] alias = { "Cod ", "´nkk",  "Estado" };
+			string[] alias = { "Cod Comanda", "Cod Servicio",  "Estado" };
 			navegador1.asignarAlias(alias);
 			navegador1.asignarSalida(this);
 			navegador1.asignarColorFondo(Color.LightBlue);

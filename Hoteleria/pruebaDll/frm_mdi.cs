@@ -11,7 +11,7 @@ using CapaDiseno;
 using CapaDatos;
 
 
-namespace pruebaDll
+namespace Hoteleria
 {
     public partial class frm_mdi : Form
     {
@@ -126,9 +126,75 @@ namespace pruebaDll
 
         private void BODEGAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_bodega nuevo = new frm_bodega(sIdUsuario);
-            nuevo.MdiParent = this;
-            nuevo.Show();
         }
-    }
+
+		private void TipoHabitacionToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_TipoHabitacion nuevo = new frm_TipoHabitacion(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void MANTENIMIENTOSToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void CategoríaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_CategoriaHabitacion nuevo = new frm_CategoriaHabitacion(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+
+		private void ServiciosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Servicios nuevo = new frm_Servicios(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void AreasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Areas nuevo = new frm_Areas(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void ComandasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Comandas nuevo = new frm_Comandas(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void SalonesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Salones nuevo = new frm_Salones(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void MenusToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Menus nuevo = new frm_Menus(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void MesasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Mesas nuevo = new frm_Mesas(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void TiendasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Tiendas nuevo = new frm_Tiendas(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+	}
 }

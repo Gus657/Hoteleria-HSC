@@ -59,11 +59,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_bodega.cs">
+    <Compile Include="frm_Mesas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_bodega.Designer.cs">
-      <DependentUpon>frm_bodega.cs</DependentUpon>
+    <Compile Include="frm_Mesas.Designer.cs">
+      <DependentUpon>frm_Mesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Menus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Menus.Designer.cs">
+      <DependentUpon>frm_Menus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CategoriaHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CategoriaHabitacion.Designer.cs">
+      <DependentUpon>frm_CategoriaHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Areas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Areas.Designer.cs">
+      <DependentUpon>frm_Areas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Comandas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Comandas.Designer.cs">
+      <DependentUpon>frm_Comandas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Salones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Salones.Designer.cs">
+      <DependentUpon>frm_Salones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Tiendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Tiendas.Designer.cs">
+      <DependentUpon>frm_Tiendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Servicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Servicios.Designer.cs">
+      <DependentUpon>frm_Servicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TipoHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TipoHabitacion.Designer.cs">
+      <DependentUpon>frm_TipoHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_mdi.cs">
       <SubType>Form</SubType>
@@ -73,8 +121,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frm_bodega.resx">
-      <DependentUpon>frm_bodega.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Mesas.resx">
+      <DependentUpon>frm_Mesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Menus.resx">
+      <DependentUpon>frm_Menus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CategoriaHabitacion.resx">
+      <DependentUpon>frm_CategoriaHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Areas.resx">
+      <DependentUpon>frm_Areas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Comandas.resx">
+      <DependentUpon>frm_Comandas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Salones.resx">
+      <DependentUpon>frm_Salones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Tiendas.resx">
+      <DependentUpon>frm_Tiendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Servicios.resx">
+      <DependentUpon>frm_Servicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TipoHabitacion.resx">
+      <DependentUpon>frm_TipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_mdi.resx">
       <DependentUpon>frm_mdi.cs</DependentUpon>

@@ -196,5 +196,12 @@ namespace Hoteleria
 			nuevo.MdiParent = this;
 			nuevo.Show();
 		}
-	}
+
+        private void HabitacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Habitaciones nuevo = new frm_Habitaciones(sIdUsuario);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
+    }
 }

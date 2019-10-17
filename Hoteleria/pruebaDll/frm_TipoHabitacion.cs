@@ -34,5 +34,10 @@ namespace Hoteleria
 			navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
 			navegador1.ObtenerIdAplicacion(aplicacionActiva);
 		}
-	}
+
+        private void Navegador1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2019 a las 02:33:19
+-- Tiempo de generación: 26-10-2019 a las 08:26:40
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -66,7 +66,7 @@ CREATE TABLE `tblproveedorbodega` (
   `maxStock` int(3) DEFAULT NULL,
   `minStock` int(3) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ CREATE TABLE `tbl_acreedor` (
   `nombre` varchar(50) NOT NULL,
   `descripcion` varchar(150) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -104,17 +104,9 @@ CREATE TABLE `tbl_aplicacion` (
 CREATE TABLE `tbl_areas` (
   `KidArea` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
+  `numarea` int(11) DEFAULT NULL,
   `estado` tinyint(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_areas`
---
-
-INSERT INTO `tbl_areas` (`KidArea`, `nombre`, `estado`) VALUES
-(1, 'Lobby', 0),
-(2, 'Parqueo', 0),
-(3, 'Restaurante', 0);
 
 -- --------------------------------------------------------
 
@@ -126,7 +118,7 @@ CREATE TABLE `tbl_asignacion_empleado` (
   `KidPoliza` int(11) NOT NULL,
   `KidComisiones` int(11) NOT NULL,
   `KidEmpleados` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -138,7 +130,7 @@ CREATE TABLE `tbl_balancegeneral_detalle` (
   `KidBalanceGeneral` int(11) NOT NULL,
   `KidCuentaContable` int(11) NOT NULL,
   `valor` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -150,7 +142,7 @@ CREATE TABLE `tbl_balancegeneral_encabezado` (
   `KidBalanceGeneral` int(11) NOT NULL,
   `capital` float DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -163,24 +155,24 @@ CREATE TABLE `tbl_bancos` (
   `nombre` varchar(50) NOT NULL,
   `descripcion` varchar(150) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_bitacora`
+-- Estructura de tabla para la tabla `tbl_bancotalento`
 --
 
-CREATE TABLE `tbl_bitacora` (
-  `PK_id_bitacora` int(11) NOT NULL,
-  `PK_id_usuario` varchar(25) NOT NULL,
-  `fecha` date DEFAULT NULL,
-  `hora` time DEFAULT NULL,
-  `host` varchar(45) DEFAULT NULL,
-  `ip` varchar(25) DEFAULT NULL,
-  `accion` varchar(50) DEFAULT NULL,
-  `tabla` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `tbl_bancotalento` (
+  `KidBancoTalento` int(11) NOT NULL,
+  `nombre_candidato` varchar(45) DEFAULT NULL,
+  `apellido_candidato` varchar(45) DEFAULT NULL,
+  `numero` int(11) DEFAULT NULL,
+  `direccion` varchar(45) DEFAULT NULL,
+  `correoelectronico` varchar(45) DEFAULT NULL,
+  `KidReporteVacante` int(11) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -209,18 +201,25 @@ CREATE TABLE `tbl_bodega` (
 CREATE TABLE `tbl_categorias_habitacion` (
   `KidCategoria` varchar(45) NOT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tbl_categorias_habitacion`
 --
 
 INSERT INTO `tbl_categorias_habitacion` (`KidCategoria`, `estado`) VALUES
-('Doble', 0),
 ('Familiar', 0),
-('Presidencial', 0),
-('Presonal', 0),
-('Simple', 0);
+('Individual', 0);
+
+--
+-- Disparadores `tbl_categorias_habitacion`
+--
+DELIMITER $$
+CREATE TRIGGER `EstadoHabitaciones2` AFTER UPDATE ON `tbl_categorias_habitacion` FOR EACH ROW BEGIN
+UPDATE tbl_habitaciones set estado = new.estado WHERE tbl_habitaciones.KidCategoria=new.KidCategoria;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -234,7 +233,7 @@ CREATE TABLE `tbl_check_in` (
   `KidEmpleado` int(11) NOT NULL,
   `fecha` date DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -248,7 +247,7 @@ CREATE TABLE `tbl_check_out` (
   `KidEmpleado` int(11) NOT NULL,
   `fecha` date DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -260,14 +259,25 @@ CREATE TABLE `tbl_clientes` (
   `KidCliente` int(11) NOT NULL,
   `nombres_cliente` varchar(45) DEFAULT NULL,
   `apellidos_cliente` varchar(45) DEFAULT NULL,
-  `genero_cliente` tinyint(4) DEFAULT NULL,
   `telefono_cliente` varchar(10) DEFAULT NULL,
   `direccion_cliente` text,
   `dpi_cliente` int(11) DEFAULT NULL,
   `nit_cliente` varchar(10) DEFAULT NULL,
   `KidTipoCliente` int(11) NOT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tbl_clientes`
+--
+
+INSERT INTO `tbl_clientes` (`KidCliente`, `nombres_cliente`, `apellidos_cliente`, `telefono_cliente`, `direccion_cliente`, `dpi_cliente`, `nit_cliente`, `KidTipoCliente`, `estado`) VALUES
+(0, 'Paula', 'Vasquez', '4654', '65465', 2147483647, '54', 1, 0),
+(1, 'Paula', 'Vasquez', '4654', '65465', 6546, '54', 1, 0),
+(2, 'Gustavo', 'Perez', '4515424', 'CIudad', 1234, '1234', 1, 0),
+(3, 'Nuevo', 'Nuevo', '4584452', 'Guate', 123456, '123456', 1, 0),
+(4, 'Gustavo', 'GUstavo', '245165', 'Ciudad', 2147483647, '2514978', 1, 0),
+(5, 'Si FUnciono', 'Paula', '9845665', '6958465', 6541, '651', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -279,14 +289,7 @@ CREATE TABLE `tbl_comandas` (
   `KidNumeroComanda` int(11) NOT NULL,
   `KidServicio` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_comandas`
---
-
-INSERT INTO `tbl_comandas` (`KidNumeroComanda`, `KidServicio`, `estado`) VALUES
-(1, 1, 0);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -300,7 +303,7 @@ CREATE TABLE `tbl_comisiones` (
   `descripcion_comisiones` varchar(45) DEFAULT NULL,
   `monto_comisiones` double DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -326,7 +329,7 @@ CREATE TABLE `tbl_conciliacion_bancaria` (
   `KidBanco` int(11) NOT NULL,
   `Kperiodo` date NOT NULL,
   `diferencia` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -341,7 +344,7 @@ CREATE TABLE `tbl_contacto` (
   `telefono` varchar(15) DEFAULT NULL,
   `email` varchar(20) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -354,7 +357,7 @@ CREATE TABLE `tbl_control_mesas` (
   `KidNumeroMesa` int(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -371,7 +374,7 @@ CREATE TABLE `tbl_creditopedido` (
   `fechaIni` timestamp NULL DEFAULT NULL,
   `fechaFin` timestamp NULL DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -388,7 +391,7 @@ CREATE TABLE `tbl_creditoservicio` (
   `fechaIni` timestamp NULL DEFAULT NULL,
   `fechaFin` timestamp NULL DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -401,7 +404,7 @@ CREATE TABLE `tbl_credpeddet` (
   `KidCreditoPedido` int(12) NOT NULL,
   `valor` double(12,2) NOT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -414,7 +417,7 @@ CREATE TABLE `tbl_credservdet` (
   `KidCreditoServicio` int(12) NOT NULL,
   `valor` double(12,2) NOT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -428,7 +431,7 @@ CREATE TABLE `tbl_cuentas` (
   `nombre` varchar(25) DEFAULT NULL,
   `descripcion` varchar(45) DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -449,6 +452,19 @@ CREATE TABLE `tbl_departamentos` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tbl_detallereportevacante`
+--
+
+CREATE TABLE `tbl_detallereportevacante` (
+  `KidReporteVacante` int(11) NOT NULL,
+  `razon` varchar(200) DEFAULT NULL,
+  `DescripcionCualidades` varchar(200) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tbl_detalle_control`
 --
 
@@ -457,7 +473,7 @@ CREATE TABLE `tbl_detalle_control` (
   `KidControl` int(11) NOT NULL,
   `KidPlatillo` int(11) NOT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -474,7 +490,7 @@ CREATE TABLE `tbl_detalle_evento` (
   `requisitos` varchar(45) DEFAULT NULL,
   `tipo` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -489,7 +505,7 @@ CREATE TABLE `tbl_detalle_folio` (
   `fecha` date DEFAULT NULL,
   `monto` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -504,7 +520,7 @@ CREATE TABLE `tbl_detalle_producto` (
   `presentacion` varchar(45) DEFAULT NULL,
   `descripcion` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -519,7 +535,7 @@ CREATE TABLE `tbl_detalle_reservacion` (
   `llegada` date DEFAULT NULL,
   `salida` date DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -551,7 +567,7 @@ CREATE TABLE `tbl_devoluciones` (
   `fecha_devoluciones` date DEFAULT NULL,
   `KidFacturaEncabezado` int(11) NOT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -566,7 +582,7 @@ CREATE TABLE `tbl_devoluciones_platillos` (
   `resolucion` varchar(45) DEFAULT NULL,
   `costo` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -595,6 +611,21 @@ CREATE TABLE `tbl_empleado` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tbl_encabezadoreportevacante`
+--
+
+CREATE TABLE `tbl_encabezadoreportevacante` (
+  `KidReporteVacante` int(11) NOT NULL,
+  `KidEmpleado` int(11) DEFAULT NULL,
+  `KidPuesto` int(11) DEFAULT NULL,
+  `fechaCreacion` date DEFAULT NULL,
+  `tipoDeContratacion` varchar(45) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tbl_estado_perdidas_ganacias_detalle`
 --
 
@@ -603,7 +634,7 @@ CREATE TABLE `tbl_estado_perdidas_ganacias_detalle` (
   `KidCuenta` int(11) NOT NULL,
   `debe` float DEFAULT NULL,
   `haber` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -615,7 +646,7 @@ CREATE TABLE `tbl_estado_perdidas_ganancias_encabezado` (
   `KidPerdidasGanancias` int(11) NOT NULL,
   `gananciaEnOperacion` float DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -629,7 +660,7 @@ CREATE TABLE `tbl_eventos` (
   `_KidEmpleado` int(11) NOT NULL,
   `fechaEvento` date DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -642,7 +673,7 @@ CREATE TABLE `tbl_existencia` (
   `kidproducto` int(11) NOT NULL,
   `cantidad` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -656,7 +687,7 @@ CREATE TABLE `tbl_existencias` (
   `KidBodega` int(11) DEFAULT NULL,
   `existencia` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -670,7 +701,7 @@ CREATE TABLE `tbl_facturadetalle` (
   `monto_facturadetalle` double DEFAULT NULL,
   `KidProducto` int(11) NOT NULL,
   `KidFacturaEncabezado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -690,7 +721,7 @@ CREATE TABLE `tbl_facturaencabezado` (
   `impuesto_facturaencabezado` double DEFAULT NULL,
   `monto_facturaencabezado` double DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -702,7 +733,7 @@ CREATE TABLE `tbl_flujoefectivo_detalle` (
   `KidFlujoEfectivo` int(11) NOT NULL,
   `KidCuenta` int(11) NOT NULL,
   `valor` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -714,7 +745,7 @@ CREATE TABLE `tbl_flujoefectivo_encabezado` (
   `KidFlujoEfectivo` int(11) NOT NULL,
   `total_efectivo` float DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -727,7 +758,7 @@ CREATE TABLE `tbl_folios` (
   `KidCliente` int(11) DEFAULT NULL,
   `fechaApertura` date DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -741,7 +772,16 @@ CREATE TABLE `tbl_habitaciones` (
   `KidCategoria` varchar(45) DEFAULT NULL,
   `precio` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tbl_habitaciones`
+--
+
+INSERT INTO `tbl_habitaciones` (`KidNumeroHabitacion`, `KidTipoHabitacion`, `KidCategoria`, `precio`, `estado`) VALUES
+(1, 'Especial', 'Familiar', 1500, 0),
+(3, 'Especial', 'Individual', 3000, 0),
+(5, 'Especial', 'Familiar', 775, 0);
 
 -- --------------------------------------------------------
 
@@ -757,7 +797,7 @@ CREATE TABLE `tbl_historia_inventario` (
   `fecha` datetime DEFAULT NULL,
   `cantidad` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -783,7 +823,7 @@ CREATE TABLE `tbl_ingredientes` (
   `KidIngredientes` int(11) NOT NULL,
   `KidProducto` int(11) NOT NULL,
   `KidRecetas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -800,7 +840,7 @@ CREATE TABLE `tbl_inventario` (
   `fecha_inventario` date DEFAULT NULL,
   `cantidad_inventario` int(11) DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -814,7 +854,7 @@ CREATE TABLE `tbl_librodiario_detalle` (
   `KidPoliza` int(11) NOT NULL,
   `debe` float DEFAULT NULL,
   `haber` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -828,7 +868,7 @@ CREATE TABLE `tbl_librodiario_encabezado` (
   `total_debe` float DEFAULT NULL,
   `total_haber` float DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -841,7 +881,7 @@ CREATE TABLE `tbl_libromayor_detalle` (
   `debe` float DEFAULT NULL,
   `haber` float DEFAULT NULL,
   `saldo_parcial` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -855,7 +895,7 @@ CREATE TABLE `tbl_libromayor_encabezado` (
   `fecha` date DEFAULT NULL,
   `saldo_final` float DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -868,7 +908,7 @@ CREATE TABLE `tbl_libro_bancos` (
   `KidBanco` int(11) NOT NULL,
   `fecha_movimiento` date DEFAULT NULL,
   `monto` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -881,7 +921,7 @@ CREATE TABLE `tbl_marca` (
   `nombre` varchar(45) DEFAULT NULL,
   `paisOrigen` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -893,15 +933,7 @@ CREATE TABLE `tbl_menus` (
   `KidMenu` int(11) NOT NULL,
   `nombreMenu` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_menus`
---
-
-INSERT INTO `tbl_menus` (`KidMenu`, `nombreMenu`, `estado`) VALUES
-(1, 'Postres', 0),
-(2, 'Bebidas', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -915,27 +947,7 @@ CREATE TABLE `tbl_mesas` (
   `capacidad` int(11) DEFAULT NULL,
   `estadoMesa` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_mesas`
---
-
-INSERT INTO `tbl_mesas` (`KidNumeroMesa`, `KidArea`, `capacidad`, `estadoMesa`, `estado`) VALUES
-(1, 2, 18, 12, 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tbl_modulo`
---
-
-CREATE TABLE `tbl_modulo` (
-  `PK_id_Modulo` int(11) NOT NULL,
-  `nombre_modulo` varchar(45) DEFAULT NULL,
-  `descripcion_modulo` varchar(200) DEFAULT NULL,
-  `estado_modulo` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -948,7 +960,7 @@ CREATE TABLE `tbl_moneda` (
   `nombre_moneda` varchar(45) DEFAULT NULL,
   `tasa_moneda` double DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -961,7 +973,7 @@ CREATE TABLE `tbl_moviemiento_inventario` (
   `nombre` varchar(45) DEFAULT NULL,
   `naturaleza` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1003,7 +1015,7 @@ CREATE TABLE `tbl_objetos_perdidos` (
   `fecha` date DEFAULT NULL,
   `descripcion` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1036,7 +1048,7 @@ CREATE TABLE `tbl_orden_dompra_detalle` (
   `precioUnitario` float(4,2) DEFAULT NULL,
   `cantidadProducto` int(3) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1052,7 +1064,7 @@ CREATE TABLE `tbl_pagos` (
   `KidTipoPago` int(11) NOT NULL,
   `KidFacturaEncabezado` int(11) NOT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1068,7 +1080,7 @@ CREATE TABLE `tbl_pagoservicio` (
   `monto` decimal(10,2) NOT NULL,
   `impuesto` int(12) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1082,7 +1094,7 @@ CREATE TABLE `tbl_pedido` (
   `KidOrdenCompra` int(12) NOT NULL,
   `total` double(12,2) NOT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1096,36 +1108,7 @@ CREATE TABLE `tbl_pedidodet` (
   `cantidad` int(3) NOT NULL,
   `valor` double(12,2) NOT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tbl_perfil_detalle`
---
-
-CREATE TABLE `tbl_perfil_detalle` (
-  `PK_id_perfil` int(11) NOT NULL,
-  `PK_id_aplicacion` int(11) NOT NULL,
-  `ingresar` tinyint(4) DEFAULT NULL,
-  `consultar` tinyint(4) DEFAULT NULL,
-  `modificar` tinyint(4) DEFAULT NULL,
-  `eliminar` tinyint(4) DEFAULT NULL,
-  `imprimir` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tbl_perfil_encabezado`
---
-
-CREATE TABLE `tbl_perfil_encabezado` (
-  `PK_id_perfil` int(11) NOT NULL,
-  `nombre_perfil` varchar(45) DEFAULT NULL,
-  `descripcion_perfil` varchar(200) DEFAULT NULL,
-  `estado_perfil` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1174,7 +1157,7 @@ CREATE TABLE `tbl_platillos` (
   `precio` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
   `Tbl_Recetas_KidRecetas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1189,7 +1172,7 @@ CREATE TABLE `tbl_poliza` (
   `monto` double DEFAULT NULL,
   `KidFacturaEncabezado` int(11) NOT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1202,7 +1185,7 @@ CREATE TABLE `tbl_precios` (
   `precio_precios` double DEFAULT NULL,
   `descripcion_precios` varchar(45) DEFAULT NULL,
   `KidProducto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1215,7 +1198,7 @@ CREATE TABLE `tbl_presupuesto_detalle` (
   `KidCuenta` int(11) NOT NULL,
   `cantidad` int(11) DEFAULT NULL,
   `monto` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1228,7 +1211,7 @@ CREATE TABLE `tbl_presupuesto_encabezado` (
   `fecha` date DEFAULT NULL,
   `descripcion` varchar(300) DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1253,7 +1236,7 @@ CREATE TABLE `tbl_producto` (
 CREATE TABLE `tbl_producto_marca` (
   `Kidproducto` int(11) NOT NULL,
   `Kidmarca` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1274,12 +1257,29 @@ CREATE TABLE `tbl_proveedor` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tbl_pruebas`
+--
+
+CREATE TABLE `tbl_pruebas` (
+  `KidPruebas` int(11) NOT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  `TiempoDuracion` varchar(45) DEFAULT NULL,
+  `PreRequisitos` varchar(45) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tbl_puestos`
 --
 
 CREATE TABLE `tbl_puestos` (
   `KidPuesto` int(11) NOT NULL,
+  `KidArea` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
   `sueldofijo` varchar(45) DEFAULT NULL,
   `estado` tinyint(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1296,7 +1296,7 @@ CREATE TABLE `tbl_quejas` (
   `fecha` date DEFAULT NULL,
   `queja` text,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1308,7 +1308,7 @@ CREATE TABLE `tbl_recetas` (
   `KidRecetas` int(11) NOT NULL,
   `receta` varchar(500) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1322,7 +1322,21 @@ CREATE TABLE `tbl_reservaciones` (
   `KidEmpleado` int(11) NOT NULL,
   `fechaReservacion` date DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tbl_resultados`
+--
+
+CREATE TABLE `tbl_resultados` (
+  `KidResultados` int(11) NOT NULL,
+  `KidBancoTalento` int(11) DEFAULT NULL,
+  `KidPruebas` int(11) DEFAULT NULL,
+  `Resultado` varchar(45) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1350,14 +1364,7 @@ CREATE TABLE `tbl_salones` (
   `capacidad` int(11) DEFAULT NULL,
   `precio` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_salones`
---
-
-INSERT INTO `tbl_salones` (`KidNumeroSalon`, `capacidad`, `precio`, `estado`) VALUES
-(1, 100, 3500, 0);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1369,7 +1376,7 @@ CREATE TABLE `tbl_serie` (
   `KidSerie` int(11) NOT NULL,
   `serie_serie` varchar(45) DEFAULT NULL,
   `descripcion_serie` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1382,7 +1389,7 @@ CREATE TABLE `tbl_servicio` (
   `nombre` varchar(50) NOT NULL,
   `descripcion` varchar(150) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1395,15 +1402,7 @@ CREATE TABLE `tbl_servicios` (
   `KidArea` int(11) NOT NULL,
   `nombreServicio` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_servicios`
---
-
-INSERT INTO `tbl_servicios` (`KidServicio`, `KidArea`, `nombreServicio`, `estado`) VALUES
-(1, 1, 'Tienda', 0),
-(2, 2, 'Estacionamineto', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1417,7 +1416,7 @@ CREATE TABLE `tbl_solicitudrembolso` (
   `motivo_solicitudrembolso` varchar(45) DEFAULT NULL,
   `KidFacturaEncabezado` int(11) NOT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1430,7 +1429,7 @@ CREATE TABLE `tbl_stock` (
   `cantidadMaxima` int(11) DEFAULT NULL,
   `cantidadMinima` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1443,7 +1442,7 @@ CREATE TABLE `tbl_sucursal` (
   `nombre` varchar(30) DEFAULT NULL,
   `direccion` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1456,14 +1455,7 @@ CREATE TABLE `tbl_tiendas` (
   `KidArea` int(11) NOT NULL,
   `descripcion` text,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_tiendas`
---
-
-INSERT INTO `tbl_tiendas` (`KidTienda`, `KidArea`, `descripcion`, `estado`) VALUES
-(1, 3, 'Cafeteria', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1474,7 +1466,7 @@ INSERT INTO `tbl_tiendas` (`KidTienda`, `KidArea`, `descripcion`, `estado`) VALU
 CREATE TABLE `tbl_tiendas_producto` (
   `KidProducto` int(11) NOT NULL,
   `KidTienda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1486,15 +1478,14 @@ CREATE TABLE `tbl_tipocliente` (
   `KidTipoCliente` int(11) NOT NULL,
   `tipo_tipocliente` varchar(45) DEFAULT NULL,
   `descripcion_tipocliente` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tbl_tipocliente`
 --
 
 INSERT INTO `tbl_tipocliente` (`KidTipoCliente`, `tipo_tipocliente`, `descripcion_tipocliente`) VALUES
-(0, 'Nuevo', 'Nuevo'),
-(1, 'Nuevo', 'Nuevo');
+(1, 'Paula', 'es paula');
 
 -- --------------------------------------------------------
 
@@ -1507,7 +1498,7 @@ CREATE TABLE `tbl_tipocuenta` (
   `nombre_tipoCuenta` varchar(25) DEFAULT NULL,
   `descripcion_tipoCuenta` varchar(45) DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1519,7 +1510,7 @@ CREATE TABLE `tbl_tipofactura` (
   `KidTipoFactura` int(11) NOT NULL,
   `tipo_tipofactura` varchar(45) DEFAULT NULL,
   `descripcion_tipofactura` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1532,7 +1523,7 @@ CREATE TABLE `tbl_tipopago` (
   `tipo_tipopago` varchar(45) DEFAULT NULL,
   `descripcion_tipopago` varchar(45) DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1544,7 +1535,7 @@ CREATE TABLE `tbl_tipoproducto` (
   `KidTipoProducto` int(11) NOT NULL,
   `tipo_tipoproducto` varchar(45) DEFAULT NULL,
   `descripcion_tipoproducto` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1558,14 +1549,25 @@ CREATE TABLE `tbl_tipo_habitacion` (
   `numeroAmbientes` int(11) DEFAULT NULL,
   `numeroPersonas` varchar(45) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tbl_tipo_habitacion`
 --
 
 INSERT INTO `tbl_tipo_habitacion` (`KidTipoHabitacion`, `numeroCamas`, `numeroAmbientes`, `numeroPersonas`, `estado`) VALUES
-('1', 3, 4, '5', 0);
+('Especial', 5, 8, '2', 0),
+('Normal', 5, 6, '6', 0);
+
+--
+-- Disparadores `tbl_tipo_habitacion`
+--
+DELIMITER $$
+CREATE TRIGGER `EstadoHabitaciones` AFTER UPDATE ON `tbl_tipo_habitacion` FOR EACH ROW BEGIN
+UPDATE tbl_habitaciones set estado = new.estado WHERE tbl_habitaciones.KidTipoHabitacion=new.KidTipoHabitacion;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1579,7 +1581,7 @@ CREATE TABLE `tbl_ubicacion` (
   `direccion` varchar(45) DEFAULT NULL,
   `capacidad` int(10) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1590,72 +1592,7 @@ CREATE TABLE `tbl_ubicacion` (
 CREATE TABLE `tbl_ubicacionprodcuto` (
   `Kidubicacion` int(11) NOT NULL,
   `Kidproducto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tbl_usuario`
---
-
-CREATE TABLE `tbl_usuario` (
-  `PK_id_usuario` varchar(25) NOT NULL,
-  `nombre_usuario` varchar(45) DEFAULT NULL,
-  `apellido_usuarios` varchar(45) DEFAULT NULL,
-  `password_usuario` varchar(45) DEFAULT NULL,
-  `cambio_contrasena` tinyint(4) DEFAULT NULL,
-  `estado_usuario` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_usuario`
---
-
-INSERT INTO `tbl_usuario` (`PK_id_usuario`, `nombre_usuario`, `apellido_usuarios`, `password_usuario`, `cambio_contrasena`, `estado_usuario`) VALUES
-('MiUsuario', 'Usuario', 'Prueba', 'e19d5cd5af0378da05f63f891c7467af', 0, 1);
-
---
--- Disparadores `tbl_usuario`
---
-DELIMITER $$
-CREATE TRIGGER `actualizarClave` BEFORE UPDATE ON `tbl_usuario` FOR EACH ROW IF NEW.password_usuario <> OLD.password_usuario THEN
-SET NEW.password_usuario = MD5(NEW.password_usuario);
-END IF
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `encriptarClave` BEFORE INSERT ON `tbl_usuario` FOR EACH ROW BEGIN
-SET NEW.password_usuario = MD5(NEW.password_usuario);
-END
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tbl_usuario_aplicacion`
---
-
-CREATE TABLE `tbl_usuario_aplicacion` (
-  `PK_id_usuario` varchar(25) NOT NULL,
-  `PK_id_aplicacion` int(11) NOT NULL,
-  `ingresar` tinyint(4) DEFAULT NULL,
-  `consultar` tinyint(4) DEFAULT NULL,
-  `modificar` tinyint(4) DEFAULT NULL,
-  `eliminar` tinyint(4) DEFAULT NULL,
-  `imprimir` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tbl_usuario_perfil`
---
-
-CREATE TABLE `tbl_usuario_perfil` (
-  `PK_id_usuario` varchar(25) NOT NULL,
-  `PK_id_perfil` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
@@ -1675,13 +1612,6 @@ ALTER TABLE `tblproveedorbodega`
 --
 ALTER TABLE `tbl_acreedor`
   ADD PRIMARY KEY (`KidAcreedor`);
-
---
--- Indices de la tabla `tbl_aplicacion`
---
-ALTER TABLE `tbl_aplicacion`
-  ADD PRIMARY KEY (`PK_id_aplicacion`,`PK_id_modulo`),
-  ADD KEY `fk_Aplicacion_Modulo` (`PK_id_modulo`);
 
 --
 -- Indices de la tabla `tbl_areas`
@@ -1717,11 +1647,11 @@ ALTER TABLE `tbl_bancos`
   ADD PRIMARY KEY (`KidBanco`);
 
 --
--- Indices de la tabla `tbl_bitacora`
+-- Indices de la tabla `tbl_bancotalento`
 --
-ALTER TABLE `tbl_bitacora`
-  ADD PRIMARY KEY (`PK_id_bitacora`,`PK_id_usuario`),
-  ADD KEY `fk_Bitacora_Usuario1` (`PK_id_usuario`);
+ALTER TABLE `tbl_bancotalento`
+  ADD PRIMARY KEY (`KidBancoTalento`),
+  ADD KEY `FK_encabezadoReporteVacante_BancoTalento` (`KidReporteVacante`);
 
 --
 -- Indices de la tabla `tbl_bodega`
@@ -1842,6 +1772,12 @@ ALTER TABLE `tbl_departamentos`
   ADD KEY `fk_Tbl_departamentos_Tbl_areas1_idx` (`KidArea`);
 
 --
+-- Indices de la tabla `tbl_detallereportevacante`
+--
+ALTER TABLE `tbl_detallereportevacante`
+  ADD PRIMARY KEY (`KidReporteVacante`);
+
+--
 -- Indices de la tabla `tbl_detalle_control`
 --
 ALTER TABLE `tbl_detalle_control`
@@ -1906,6 +1842,14 @@ ALTER TABLE `tbl_empleado`
   ADD PRIMARY KEY (`KidEmpleado`),
   ADD KEY `fk_Tbl_empleado_Tbl_puestos1_idx` (`KidPuesto`),
   ADD KEY `fk_Tbl_empleado_Tbl_departamentos1_idx` (`KidDepartamento`);
+
+--
+-- Indices de la tabla `tbl_encabezadoreportevacante`
+--
+ALTER TABLE `tbl_encabezadoreportevacante`
+  ADD PRIMARY KEY (`KidReporteVacante`),
+  ADD KEY `FK_Empleado_ReporteVacante` (`KidEmpleado`),
+  ADD KEY `FK_Puesto_ReporteVacante` (`KidPuesto`);
 
 --
 -- Indices de la tabla `tbl_estado_perdidas_ganacias_detalle`
@@ -1987,8 +1931,8 @@ ALTER TABLE `tbl_folios`
 --
 ALTER TABLE `tbl_habitaciones`
   ADD PRIMARY KEY (`KidNumeroHabitacion`),
-  ADD KEY `tipoHabitacion` (`KidTipoHabitacion`),
-  ADD KEY `categoria` (`KidCategoria`);
+  ADD KEY `categoria` (`KidCategoria`),
+  ADD KEY `tipoHabitacion` (`KidTipoHabitacion`);
 
 --
 -- Indices de la tabla `tbl_historia_inventario`
@@ -2077,12 +2021,6 @@ ALTER TABLE `tbl_mesas`
   ADD KEY `fk_Tbl_Mesas_Tbl_Areas1` (`KidArea`);
 
 --
--- Indices de la tabla `tbl_modulo`
---
-ALTER TABLE `tbl_modulo`
-  ADD PRIMARY KEY (`PK_id_Modulo`);
-
---
 -- Indices de la tabla `tbl_moneda`
 --
 ALTER TABLE `tbl_moneda`
@@ -2164,19 +2102,6 @@ ALTER TABLE `tbl_pedidodet`
   ADD KEY `fk_PedidoDet_producto` (`KidProducto`);
 
 --
--- Indices de la tabla `tbl_perfil_detalle`
---
-ALTER TABLE `tbl_perfil_detalle`
-  ADD PRIMARY KEY (`PK_id_perfil`,`PK_id_aplicacion`),
-  ADD KEY `fk_Perfil_detalle_Aplicacion1` (`PK_id_aplicacion`);
-
---
--- Indices de la tabla `tbl_perfil_encabezado`
---
-ALTER TABLE `tbl_perfil_encabezado`
-  ADD PRIMARY KEY (`PK_id_perfil`);
-
---
 -- Indices de la tabla `tbl_planillasdetalle`
 --
 ALTER TABLE `tbl_planillasdetalle`
@@ -2245,10 +2170,17 @@ ALTER TABLE `tbl_proveedor`
   ADD PRIMARY KEY (`KidProveedor`);
 
 --
+-- Indices de la tabla `tbl_pruebas`
+--
+ALTER TABLE `tbl_pruebas`
+  ADD PRIMARY KEY (`KidPruebas`);
+
+--
 -- Indices de la tabla `tbl_puestos`
 --
 ALTER TABLE `tbl_puestos`
-  ADD PRIMARY KEY (`KidPuesto`);
+  ADD PRIMARY KEY (`KidPuesto`),
+  ADD KEY `fk_Area_Puestos` (`KidArea`);
 
 --
 -- Indices de la tabla `tbl_quejas`
@@ -2270,6 +2202,14 @@ ALTER TABLE `tbl_reservaciones`
   ADD PRIMARY KEY (`KidReservacion`),
   ADD KEY `fk_Tbl_Reservaciones_Tbl_Clientes1` (`KidCliente`),
   ADD KEY `fk_Tbl_Reservaciones_Tbl_Empleados1` (`KidEmpleado`);
+
+--
+-- Indices de la tabla `tbl_resultados`
+--
+ALTER TABLE `tbl_resultados`
+  ADD PRIMARY KEY (`KidResultados`),
+  ADD KEY `FK_BancoTalento_Resultados` (`KidBancoTalento`),
+  ADD KEY `FK_Pruebas_Resultados` (`KidPruebas`);
 
 --
 -- Indices de la tabla `tbl_roles_de_pago`
@@ -2385,26 +2325,6 @@ ALTER TABLE `tbl_ubicacionprodcuto`
   ADD KEY `fk_Producto_Ubicacion` (`Kidproducto`);
 
 --
--- Indices de la tabla `tbl_usuario`
---
-ALTER TABLE `tbl_usuario`
-  ADD PRIMARY KEY (`PK_id_usuario`);
-
---
--- Indices de la tabla `tbl_usuario_aplicacion`
---
-ALTER TABLE `tbl_usuario_aplicacion`
-  ADD PRIMARY KEY (`PK_id_usuario`,`PK_id_aplicacion`),
-  ADD KEY `fk_tbl_usuario_aplicacion_tbl_aplicacion1` (`PK_id_aplicacion`);
-
---
--- Indices de la tabla `tbl_usuario_perfil`
---
-ALTER TABLE `tbl_usuario_perfil`
-  ADD PRIMARY KEY (`PK_id_usuario`,`PK_id_perfil`),
-  ADD KEY `fk_Usuario_perfil_Perfil1` (`PK_id_perfil`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -2413,12 +2333,6 @@ ALTER TABLE `tbl_usuario_perfil`
 --
 ALTER TABLE `tbl_balancegeneral_encabezado`
   MODIFY `KidBalanceGeneral` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `tbl_bitacora`
---
-ALTER TABLE `tbl_bitacora`
-  MODIFY `PK_id_bitacora` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_cuentas`
@@ -2475,12 +2389,6 @@ ALTER TABLE `tblproveedorbodega`
   ADD CONSTRAINT `Fk_proveedor_bodega_producto` FOREIGN KEY (`KidProducto`) REFERENCES `tbl_producto` (`KidProducto`);
 
 --
--- Filtros para la tabla `tbl_aplicacion`
---
-ALTER TABLE `tbl_aplicacion`
-  ADD CONSTRAINT `fk_Aplicacion_Modulo` FOREIGN KEY (`PK_id_modulo`) REFERENCES `tbl_modulo` (`PK_id_Modulo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Filtros para la tabla `tbl_asignacion_empleado`
 --
 ALTER TABLE `tbl_asignacion_empleado`
@@ -2496,10 +2404,10 @@ ALTER TABLE `tbl_balancegeneral_detalle`
   ADD CONSTRAINT `fk_tbl_BalanceGeneral_Detalle_tbl_cuentas_contables1` FOREIGN KEY (`KidCuentaContable`) REFERENCES `tbl_cuentas` (`KidCuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `tbl_bitacora`
+-- Filtros para la tabla `tbl_bancotalento`
 --
-ALTER TABLE `tbl_bitacora`
-  ADD CONSTRAINT `fk_Bitacora_Usuario1` FOREIGN KEY (`PK_id_usuario`) REFERENCES `tbl_usuario` (`PK_id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `tbl_bancotalento`
+  ADD CONSTRAINT `FK_encabezadoReporteVacante_BancoTalento` FOREIGN KEY (`KidReporteVacante`) REFERENCES `tbl_encabezadoreportevacante` (`KidReporteVacante`);
 
 --
 -- Filtros para la tabla `tbl_check_in`
@@ -2519,7 +2427,7 @@ ALTER TABLE `tbl_check_out`
 -- Filtros para la tabla `tbl_clientes`
 --
 ALTER TABLE `tbl_clientes`
-  ADD CONSTRAINT `fk_Cliente_TipoCliente` FOREIGN KEY (`KidTipoCliente`) REFERENCES `mydb`.`tbl_tipocliente` (`KidTipoCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Cliente_TipoCliente` FOREIGN KEY (`KidTipoCliente`) REFERENCES `tbl_tipocliente` (`KidTipoCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tbl_comandas`
@@ -2584,6 +2492,12 @@ ALTER TABLE `tbl_departamentos`
   ADD CONSTRAINT `fk_Tbl_departamentos_Tbl_areas1` FOREIGN KEY (`KidArea`) REFERENCES `tbl_areas` (`KidArea`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Filtros para la tabla `tbl_detallereportevacante`
+--
+ALTER TABLE `tbl_detallereportevacante`
+  ADD CONSTRAINT `FK_Encabezado_DetalleReporteVacante` FOREIGN KEY (`KidReporteVacante`) REFERENCES `tbl_encabezadoreportevacante` (`KidReporteVacante`);
+
+--
 -- Filtros para la tabla `tbl_detalle_control`
 --
 ALTER TABLE `tbl_detalle_control`
@@ -2642,6 +2556,13 @@ ALTER TABLE `tbl_devoluciones_platillos`
 ALTER TABLE `tbl_empleado`
   ADD CONSTRAINT `fk_Tbl_empleado_Tbl_departamentos1` FOREIGN KEY (`KidDepartamento`) REFERENCES `tbl_departamentos` (`KidDepartamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Tbl_empleado_Tbl_puestos1` FOREIGN KEY (`KidPuesto`) REFERENCES `tbl_puestos` (`KidPuesto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `tbl_encabezadoreportevacante`
+--
+ALTER TABLE `tbl_encabezadoreportevacante`
+  ADD CONSTRAINT `FK_Empleado_ReporteVacante` FOREIGN KEY (`KidEmpleado`) REFERENCES `tbl_empleado` (`KidEmpleado`),
+  ADD CONSTRAINT `FK_Puesto_ReporteVacante` FOREIGN KEY (`KidPuesto`) REFERENCES `tbl_puestos` (`KidPuesto`);
 
 --
 -- Filtros para la tabla `tbl_estado_perdidas_ganacias_detalle`
@@ -2704,8 +2625,8 @@ ALTER TABLE `tbl_folios`
 -- Filtros para la tabla `tbl_habitaciones`
 --
 ALTER TABLE `tbl_habitaciones`
-  ADD CONSTRAINT `categoria` FOREIGN KEY (`KidCategoria`) REFERENCES `tbl_categorias_habitacion` (`KidCategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tipoHabitacion` FOREIGN KEY (`KidTipoHabitacion`) REFERENCES `tbl_tipo_habitacion` (`KidTipoHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `categoria` FOREIGN KEY (`KidCategoria`) REFERENCES `tbl_categorias_habitacion` (`KidCategoria`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tipoHabitacion` FOREIGN KEY (`KidTipoHabitacion`) REFERENCES `tbl_tipo_habitacion` (`KidTipoHabitacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbl_historia_inventario`
@@ -2825,13 +2746,6 @@ ALTER TABLE `tbl_pedidodet`
   ADD CONSTRAINT `fk_PedidoDet_producto` FOREIGN KEY (`KidProducto`) REFERENCES `tbl_producto` (`KidProducto`);
 
 --
--- Filtros para la tabla `tbl_perfil_detalle`
---
-ALTER TABLE `tbl_perfil_detalle`
-  ADD CONSTRAINT `fk_Perfil_detalle_Aplicacion1` FOREIGN KEY (`PK_id_aplicacion`) REFERENCES `tbl_aplicacion` (`PK_id_aplicacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Perfil_detalle_Perfil1` FOREIGN KEY (`PK_id_perfil`) REFERENCES `tbl_perfil_encabezado` (`PK_id_perfil`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Filtros para la tabla `tbl_planillasdetalle`
 --
 ALTER TABLE `tbl_planillasdetalle`
@@ -2878,6 +2792,12 @@ ALTER TABLE `tbl_producto_marca`
   ADD CONSTRAINT `fk_Producto_Marca` FOREIGN KEY (`Kidproducto`) REFERENCES `tbl_producto` (`KidProducto`);
 
 --
+-- Filtros para la tabla `tbl_puestos`
+--
+ALTER TABLE `tbl_puestos`
+  ADD CONSTRAINT `fk_Area_Puestos` FOREIGN KEY (`KidArea`) REFERENCES `tbl_tipocliente` (`KidTipoCliente`);
+
+--
 -- Filtros para la tabla `tbl_quejas`
 --
 ALTER TABLE `tbl_quejas`
@@ -2889,6 +2809,13 @@ ALTER TABLE `tbl_quejas`
 ALTER TABLE `tbl_reservaciones`
   ADD CONSTRAINT `fk_Tbl_Reservaciones_Tbl_Clientes1` FOREIGN KEY (`KidCliente`) REFERENCES `tbl_clientes` (`KidCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Tbl_Reservaciones_Tbl_Empleados1` FOREIGN KEY (`KidEmpleado`) REFERENCES `tbl_empleados` (`KidEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `tbl_resultados`
+--
+ALTER TABLE `tbl_resultados`
+  ADD CONSTRAINT `FK_BancoTalento_Resultados` FOREIGN KEY (`KidBancoTalento`) REFERENCES `tbl_bancotalento` (`KidBancoTalento`),
+  ADD CONSTRAINT `FK_Pruebas_Resultados` FOREIGN KEY (`KidPruebas`) REFERENCES `tbl_pruebas` (`KidPruebas`);
 
 --
 -- Filtros para la tabla `tbl_servicios`
@@ -2921,20 +2848,6 @@ ALTER TABLE `tbl_tiendas_producto`
 ALTER TABLE `tbl_ubicacionprodcuto`
   ADD CONSTRAINT `fk_Producto_Ubicacion` FOREIGN KEY (`Kidproducto`) REFERENCES `tbl_producto` (`KidProducto`),
   ADD CONSTRAINT `fk_Ubicacion_Producto` FOREIGN KEY (`Kidubicacion`) REFERENCES `tbl_ubicacion` (`Kidubicacion`);
-
---
--- Filtros para la tabla `tbl_usuario_aplicacion`
---
-ALTER TABLE `tbl_usuario_aplicacion`
-  ADD CONSTRAINT `fk_Usuario_aplicacion_Usuario1` FOREIGN KEY (`PK_id_usuario`) REFERENCES `tbl_usuario` (`PK_id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_usuario_aplicacion_tbl_aplicacion1` FOREIGN KEY (`PK_id_aplicacion`) REFERENCES `tbl_aplicacion` (`PK_id_aplicacion`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `tbl_usuario_perfil`
---
-ALTER TABLE `tbl_usuario_perfil`
-  ADD CONSTRAINT `fk_Usuario_perfil_Perfil1` FOREIGN KEY (`PK_id_perfil`) REFERENCES `tbl_perfil_encabezado` (`PK_id_perfil`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Usuario_perfil_Usuario1` FOREIGN KEY (`PK_id_usuario`) REFERENCES `tbl_usuario` (`PK_id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

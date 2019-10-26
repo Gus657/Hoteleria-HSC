@@ -266,7 +266,7 @@ namespace CapaDeDatos
             try
             {
 
-                OdbcCommand command = new OdbcCommand("select  " + campo + " FROM " + tabla, cn.probarConexion());
+                OdbcCommand command = new OdbcCommand("select  " + campo + " FROM " + tabla + " WHERE estado = 0", cn.probarConexion());
                 OdbcDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())

@@ -771,7 +771,7 @@ namespace CapaDeDiseno
                         switch (tipoCampo[posCampo])
                         {
                             case "Text":
-                                whereQuery += componente.Name + " = '" + componente.Text;
+                                whereQuery += componente.Name + " = '" + componente.Text + "'";
                                 break;
                             case "Num":
                                 whereQuery += componente.Name + " = " + componente.Text;
@@ -864,7 +864,7 @@ namespace CapaDeDiseno
                         switch (tipoCampo[posCampo])
                         {
                             case "Text":
-                                whereQuery += componente.Name + " = '" + componente.Text;
+                                whereQuery += componente.Name + " = '" + componente.Text + "'";
                                 break;
                             case "Num":
                                 whereQuery += componente.Name + " = " + componente.Text;

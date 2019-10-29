@@ -38,7 +38,7 @@
     </Reference>
     <Reference Include="CapaDeDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+      <HintPath>..\..\..\..\..\2do Parcial\NAV2K19\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
     <Reference Include="CapaDiseno">
       <HintPath>..\..\Capacitación Modulo de Seguridad\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.dll</HintPath>

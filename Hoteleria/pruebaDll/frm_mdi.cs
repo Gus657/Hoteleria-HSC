@@ -30,6 +30,9 @@ namespace Hoteleria
             childForm.MdiParent = this;
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
+            string AsRuta;
+            string AsIndice;
+            
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -71,15 +74,8 @@ namespace Hoteleria
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
+      
+      
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -111,9 +107,7 @@ namespace Hoteleria
 
         private void SEGURIDADToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MDI_Seguridad seguridad = new MDI_Seguridad(sIdUsuario);
-            seguridad.lbl_nombreUsuario.Text = sIdUsuario;
-            seguridad.ShowDialog();
+          
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -196,5 +190,31 @@ namespace Hoteleria
 			nuevo.MdiParent = this;
 			nuevo.Show();
 		}
-	}
+
+        private void HabitacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Habitaciones nuevo = new frm_Habitaciones(sIdUsuario);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
+
+        private void SEGURIDADToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MDI_Seguridad seguridad = new MDI_Seguridad(sIdUsuario);
+            seguridad.lbl_nombreUsuario.Text = sIdUsuario;
+            seguridad.ShowDialog();
+        }
+
+		private void MantenimientoAyudasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			CapaDeDiseno.Ayudas formayuda = new CapaDeDiseno.Ayudas();
+			formayuda.Show();
+
+		}
+
+        private void MDIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "Menúboletos.html");//Abre el menu de ayuda HTML
+        }
+    }
 }

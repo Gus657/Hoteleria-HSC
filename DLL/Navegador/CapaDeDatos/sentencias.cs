@@ -11,16 +11,67 @@ namespace CapaDeDatos
     {
 
         conexion cn = new conexion();
-
+        //mostrar los datos en DataGridView de forma DESC y que tengan estado 1 =>Randy 
         public OdbcDataAdapter llenaTbl(string tabla)// metodo  que obtinene el contenio de una tabla
         {
-
-            
-
-           string sql = "SELECT * FROM " + tabla + " where estado=0;";
+            string[] camposDesc = obtenerCampos(tabla); //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
+            string sql = "SELECT * FROM " + tabla + " WHERE estado=0 || estado=1 ORDER BY " + camposDesc[0] + " DESC ;";
+            //SELECT * FROM tbl_bodega WHERE estado=1 ORDER BY kbodega DESC
             OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, cn.probarConexion());
             return dataTable;
         }
+        //obtener ID siguiente => Randy             
+        public string obtenerId(string tabla)
+        {
+            string[] camposDesc = obtenerCampos(tabla); //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
+            string sql = "SELECT MAX(" + camposDesc[0] + ") FROM " + tabla + ";"; //SELECT MAX(idFuncion) FROM `funciones`            
+            string sid = "";
+            OdbcCommand command = new OdbcCommand(sql, cn.probarConexion());
+            OdbcDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                if (reader.Read())
+                {
+                    if (reader.GetValue(0).ToString() == null || reader.GetValue(0).ToString() == "")
+                    {
+                        sid = "1";
+                    }
+                    else
+                    {
+                        sid = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            else
+            {
+                sid = "1";
+            }
+            return sid;
+        }
+        //obtener la ultima columna de la funcion DESCRIBE => Randy 
+        public string[] obtenerExtra(string tabla)//metodo que obtiene la lista de los valores EXTRA que tiene un campo
+        {
+            string[] Campos = new string[30];
+            int i = 0;
+            OdbcCommand command = new OdbcCommand("DESCRIBE " + tabla + "", cn.probarConexion());
+            OdbcDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Campos[i] = reader.GetValue(5).ToString();
+                i++;
+            }
+            return Campos;// devuelve un arreglo con los valores EXTRA
+        }
+
+        /**/
+        public OdbcDataAdapter llenaTbl2()// metodo  que obtinene el contenio de una tabla
+        {
+            string sql = "SELECT Id_ayuda, Ruta, indice FROM ayuda";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, cn.probarConexion());
+            return dataTable;
+        }
+        /**/
+
         public int contarAlias(string tabla)// metodo  que obtinene el contenio de una tabla
         {
            int Campos = 0;
@@ -71,20 +122,8 @@ namespace CapaDeDatos
             }
             catch (Exception ex) { Console.WriteLine(ex.Message.ToString() + " \nError en obtenerTipo, revise los parámetros de la tabla  \n -" + tabla.ToUpper() + "\n -"); }
             return Campos;// devuelve un arreglo con los tiposlos campos
-        }
-        public int maxId(string tabla)// metodo  que obtinene el contenio de una tabla
-        {
-            int Campos = 0;
-            try
-            {
-                OdbcCommand command = new OdbcCommand("SELECT * FROM " + tabla + " ORDER BY "+primerCampo(tabla)+" DESC;", cn.probarConexion());
-                OdbcDataReader reader = command.ExecuteReader();
-                reader.Read();
-                Campos = Convert.ToInt32(reader.GetValue(0));
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message.ToString() + " \nError en obtener Maximo Id, revise los parámetros de la tabla "); }
-            return Campos;
-        }
+        }       
+
         public string modRuta(string idindice)// metodo  que obtinene el contenio de una tabla
         {
 
@@ -149,14 +188,10 @@ namespace CapaDeDatos
                 OdbcDataReader reader = command.ExecuteReader();
                 reader.Read();
             }
-            catch (Exception err)
+            catch (Exception)
             {
-
-                error = "La tabla " + tabla.ToUpper() + " no existe";
+                error = "La tabla " + tabla.ToUpper() + " no existe.";
             }
-
-
-
             return error;
         }
 
@@ -169,7 +204,7 @@ namespace CapaDeDatos
                 OdbcDataReader reader = command.ExecuteReader();
                 reader.Read();
             }
-            catch (Exception err)
+            catch (Exception)
             {
 
                 error = "La tabla " + tabla.ToUpper() + " no contiene el campo de ESTADO";
@@ -182,14 +217,14 @@ namespace CapaDeDatos
             int registros =0;
             try
             {
-                OdbcCommand command = new OdbcCommand("SELECT * FROM " + tabla + " where estado=0;", cn.probarConexion());
+                OdbcCommand command = new OdbcCommand("SELECT * FROM " + tabla + " where estado=1;", cn.probarConexion());
                 OdbcDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     registros++;
                 }
             }
-            catch (Exception err)
+            catch (Exception)
             {
 
             }
@@ -259,6 +294,7 @@ namespace CapaDeDatos
         }
         public string[] obtenerItems(string tabla, string campo)//metodo que obtiene la lista de los tipos de campos que requiere una tabla
         {
+
             string[] items = new string[300];
             int i = 0;
 
@@ -266,7 +302,7 @@ namespace CapaDeDatos
             try
             {
 
-                OdbcCommand command = new OdbcCommand("select  " + campo + " FROM " + tabla, cn.probarConexion());
+                OdbcCommand command = new OdbcCommand("select  " + campo + " FROM " + tabla + " WHERE estado = 1", cn.probarConexion());
                 OdbcDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
@@ -280,6 +316,7 @@ namespace CapaDeDatos
 
 
             return items;// devuelve un arreglo con los tipos
+
         }
         string limpiarTipo(string cadena)// elimina los parentesis y tama;o de campo del tipo de campo
         {
@@ -313,7 +350,58 @@ namespace CapaDeDatos
             return nuevaCadena;// devuelve la cadena unicamente con el tipo
         }
 
-        public void ejecutarQuery(string query)// ejecuta un query en la BD
+		public string llaveCampo(string tabla, string campo, string valor)
+		{
+			string llave = "";
+			try
+			{
+				OdbcCommand command = new OdbcCommand("SELECT * FROM " + tabla + " where "+campo+" = '"+valor+"' ;", cn.probarConexion());
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+				llave = reader.GetValue(0).ToString();
+			}
+			catch (Exception)
+			{
+				
+			}
+			return llave;
+		}
+		public string llaveCampoReverso(string tabla, string campo, string valor)
+		{
+			string llave = "";
+			string[] Campos = obtenerCampos(tabla);
+			try
+			{
+				OdbcCommand command = new OdbcCommand("SELECT "+campo+" FROM " + tabla + " where " + Campos[0]+ " = " + valor + " ;", cn.probarConexion());
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+				llave = reader.GetValue(0).ToString();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Dio errore " + "SELECT " + campo + " FROM " + tabla + " where " + campo + " = " + valor + " ;" + ex.ToString());
+			}
+			return llave;
+		}
+
+		public string IdModulo(string aplicacion)
+		{
+			string llave = "";
+			try
+			{
+				OdbcCommand command = new OdbcCommand("SELECT * FROM tbl_aplicacion" + " where" + " PK_id_aplicacion= " +aplicacion + " ;", cn.probarConexion());
+				OdbcDataReader reader = command.ExecuteReader();
+				reader.Read();
+				llave = reader.GetValue(0).ToString();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Dio errore " + "SELECT * FROM tbl_aplicacion" + " where" + " PK_id_aplicacion= " + aplicacion + " ;" +ex.ToString());
+			}
+			return llave;
+		}
+
+		public void ejecutarQuery(string query)// ejecuta un query en la BD
         {
             try
             {

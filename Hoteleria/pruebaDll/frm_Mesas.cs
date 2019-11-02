@@ -22,7 +22,7 @@ namespace Hoteleria
 			navegador1.asignarSalida(this);
 			navegador1.asignarColorFondo(Color.LightBlue);
 			navegador1.asignarColorFuente(Color.BlueViolet);
-			navegador1.asignarComboConTabla("tbl_areas", "KidArea");
+			navegador1.asignarComboConTabla("tbl_areas", "KidArea",0);
 			navegador1.asignarAyuda("1");
 			navegador1.asignarTabla("tbl_mesas");
 			navegador1.asignarNombreForm("Mesas");

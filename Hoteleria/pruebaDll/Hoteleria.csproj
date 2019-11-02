@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_Habitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Habitaciones.Designer.cs">
+      <DependentUpon>frm_Habitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Mesas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_Habitaciones.resx">
+      <DependentUpon>frm_Habitaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Mesas.resx">
       <DependentUpon>frm_Mesas.cs</DependentUpon>
     </EmbeddedResource>

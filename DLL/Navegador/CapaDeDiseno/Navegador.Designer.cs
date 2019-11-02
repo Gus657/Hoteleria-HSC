@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Navegador));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Btn_Salir = new System.Windows.Forms.Button();
             this.Btn_Ayuda = new System.Windows.Forms.Button();
+            this.Btn_Salir = new System.Windows.Forms.Button();
             this.Btn_FlechaFin = new System.Windows.Forms.Button();
             this.Btn_Siguiente = new System.Windows.Forms.Button();
             this.Btn_Anterior = new System.Windows.Forms.Button();
@@ -66,6 +66,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1133, 201);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // tableLayoutPanel2
             // 
@@ -85,8 +86,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142859F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142859F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.Btn_Salir, 13, 0);
             this.tableLayoutPanel2.Controls.Add(this.Btn_Ayuda, 12, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_Salir, 13, 0);
             this.tableLayoutPanel2.Controls.Add(this.Btn_FlechaFin, 11, 0);
             this.tableLayoutPanel2.Controls.Add(this.Btn_Siguiente, 10, 0);
             this.tableLayoutPanel2.Controls.Add(this.Btn_Anterior, 9, 0);
@@ -106,6 +107,26 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1142, 92);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
+            // Btn_Ayuda
+            // 
+            this.Btn_Ayuda.BackColor = System.Drawing.Color.White;
+            this.Btn_Ayuda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_Ayuda.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Btn_Ayuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.Btn_Ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Ayuda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Ayuda.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Ayuda.Image")));
+            this.Btn_Ayuda.Location = new System.Drawing.Point(972, 0);
+            this.Btn_Ayuda.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_Ayuda.Name = "Btn_Ayuda";
+            this.Btn_Ayuda.Size = new System.Drawing.Size(81, 92);
+            this.Btn_Ayuda.TabIndex = 1;
+            this.Btn_Ayuda.Text = "Ayuda";
+            this.Btn_Ayuda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_Ayuda.UseVisualStyleBackColor = false;
+            this.Btn_Ayuda.Click += new System.EventHandler(this.Btn_Ayuda_Click_1);
+            // 
             // Btn_Salir
             // 
             this.Btn_Salir.BackColor = System.Drawing.Color.White;
@@ -124,25 +145,6 @@
             this.Btn_Salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_Salir.UseVisualStyleBackColor = false;
             this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
-            // 
-            // Btn_Ayuda
-            // 
-            this.Btn_Ayuda.BackColor = System.Drawing.Color.White;
-            this.Btn_Ayuda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_Ayuda.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.Btn_Ayuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Btn_Ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Ayuda.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Ayuda.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Ayuda.Image")));
-            this.Btn_Ayuda.Location = new System.Drawing.Point(972, 0);
-            this.Btn_Ayuda.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_Ayuda.Name = "Btn_Ayuda";
-            this.Btn_Ayuda.Size = new System.Drawing.Size(81, 92);
-            this.Btn_Ayuda.TabIndex = 12;
-            this.Btn_Ayuda.Text = "Ayuda";
-            this.Btn_Ayuda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Btn_Ayuda.UseVisualStyleBackColor = false;
-            this.Btn_Ayuda.Click += new System.EventHandler(this.Btn_Ayuda_Click);
             // 
             // Btn_FlechaFin
             // 
@@ -387,7 +389,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(973, 45);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
@@ -402,6 +404,7 @@
             this.lblTabla.TabIndex = 0;
             this.lblTabla.Text = "Tabla";
             this.lblTabla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTabla.Click += new System.EventHandler(this.LblTabla_Click);
             // 
             // Navegador
             // 
@@ -426,14 +429,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button Btn_Salir;
-        private System.Windows.Forms.Button Btn_Ayuda;
         private System.Windows.Forms.Button Btn_FlechaFin;
         private System.Windows.Forms.Button Btn_Siguiente;
         private System.Windows.Forms.Button Btn_Anterior;
         private System.Windows.Forms.Button Btn_FlechaInicio;
         private System.Windows.Forms.Button Btn_Refrescar;
-        public System.Windows.Forms.Button Btn_Imprimir;
-        public System.Windows.Forms.Button Btn_Consultar;
+        private System.Windows.Forms.Button Btn_Imprimir;
+        private System.Windows.Forms.Button Btn_Consultar;
         private System.Windows.Forms.Button Btn_Eliminar;
         private System.Windows.Forms.Button Btn_Cancelar;
         private System.Windows.Forms.Button Btn_Guardar;
@@ -443,5 +445,6 @@
         private System.Windows.Forms.ColorDialog colorDialog2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblTabla;
+        private System.Windows.Forms.Button Btn_Ayuda;
     }
 }

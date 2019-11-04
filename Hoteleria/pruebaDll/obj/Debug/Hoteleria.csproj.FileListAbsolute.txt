@@ -258,3 +258,33 @@ C:\Users\juan_\Desktop\Script y hoteleria\Hoteleria 2.1\Hoteleria\pruebaDll\obj\
 C:\Users\juan_\Desktop\Script y hoteleria\Hoteleria 2.1\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csproj.CopyComplete
 C:\Users\juan_\Desktop\Script y hoteleria\Hoteleria 2.1\Hoteleria\pruebaDll\obj\Debug\Hoteleria.exe
 C:\Users\juan_\Desktop\Script y hoteleria\Hoteleria 2.1\Hoteleria\pruebaDll\obj\Debug\Hoteleria.pdb
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\Hoteleria.exe.config
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\Hoteleria.exe
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\Hoteleria.pdb
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDeDiseno.dll
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDeLogica.dll
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDeDatos.dll
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDatos.pdb
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDeDiseno.pdb
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDiseno.pdb
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaLogica.pdb
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDeLogica.pdb
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDeDatos.pdb
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csprojAssemblyReference.cache
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Habitaciones.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Mesas.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Menus.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_CategoriaHabitacion.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Areas.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Comandas.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Salones.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Tiendas.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Servicios.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_TipoHabitacion.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_mdi.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.Properties.Resources.resources
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csproj.GenerateResource.cache
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csproj.CoreCompileInputs.cache
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csproj.CopyComplete
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.exe
+C:\Users\edgar\Documents\GitHub\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.pdb

@@ -214,7 +214,7 @@ namespace Hoteleria
 
         private void MDIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "Menúboletos.html");//Abre el menu de ayuda HTML
+            Help.ShowHelp(this, " Ayuda Hoteleria/ayuda hotel.chm", "DMI.html");//Abre el menu de ayuda HTML
         }
     }
 }

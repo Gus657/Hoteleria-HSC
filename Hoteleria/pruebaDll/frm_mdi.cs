@@ -214,7 +214,28 @@ namespace Hoteleria
 
         private void MDIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, " Página web ayuda/ayuda.chm", "Menúboletos.html");//Abre el menu de ayuda HTML
-        }
-    }
+			Help.ShowHelp(this, " Ayuda Hoteleria/ayuda hotel.chm", "DMI.html");//Abre el menu de ayuda HTML
+		}
+
+		private void ObjetosPerdidosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_ObjetosPerdidos nuevo = new frm_ObjetosPerdidos(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void RecetasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Recetas nuevo = new frm_Recetas(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+
+		private void PlatillosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frm_Platillos nuevo = new frm_Platillos(sIdUsuario);
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+	}
 }

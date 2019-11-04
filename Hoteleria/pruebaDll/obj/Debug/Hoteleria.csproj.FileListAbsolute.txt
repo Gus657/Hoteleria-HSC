@@ -258,3 +258,7 @@ C:\Users\juan_\Desktop\Script y hoteleria\Hoteleria 2.1\Hoteleria\pruebaDll\obj\
 C:\Users\juan_\Desktop\Script y hoteleria\Hoteleria 2.1\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csproj.CopyComplete
 C:\Users\juan_\Desktop\Script y hoteleria\Hoteleria 2.1\Hoteleria\pruebaDll\obj\Debug\Hoteleria.exe
 C:\Users\juan_\Desktop\Script y hoteleria\Hoteleria 2.1\Hoteleria\pruebaDll\obj\Debug\Hoteleria.pdb
+C:\Users\gganp\Desktop\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Habitaciones.resources
+C:\Users\gganp\Desktop\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_ObjetosPerdidos.resources
+C:\Users\gganp\Desktop\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Recetas.resources
+C:\Users\gganp\Desktop\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Platillos.resources

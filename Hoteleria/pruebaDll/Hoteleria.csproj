@@ -65,6 +65,24 @@
     <Compile Include="frm_Habitaciones.Designer.cs">
       <DependentUpon>frm_Habitaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Platillos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Platillos.Designer.cs">
+      <DependentUpon>frm_Platillos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Recetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Recetas.Designer.cs">
+      <DependentUpon>frm_Recetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ObjetosPerdidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ObjetosPerdidos.Designer.cs">
+      <DependentUpon>frm_ObjetosPerdidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Mesas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +147,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_Habitaciones.resx">
       <DependentUpon>frm_Habitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Platillos.resx">
+      <DependentUpon>frm_Platillos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Recetas.resx">
+      <DependentUpon>frm_Recetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ObjetosPerdidos.resx">
+      <DependentUpon>frm_ObjetosPerdidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Mesas.resx">
       <DependentUpon>frm_Mesas.cs</DependentUpon>

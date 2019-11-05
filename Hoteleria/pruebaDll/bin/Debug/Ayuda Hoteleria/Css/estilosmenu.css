@@ -1,0 +1,34 @@
+h1 {
+  color: rgb(50, 167, 202);
+  text-align: center;
+  height: 30px;
+
+}
+.h1 {
+  color: black;
+  text-align: justify;
+  font-size: 25px;
+
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+.h2{
+   color: rgb(15, 166, 236);
+  text-align: justify;
+  font-size: 50px;
+text-align: center;
+
+}
+.lin{
+  color: blue;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h2{
+  color: rgb(50, 167, 202);
+  text-align: center;
+  height: 30px;
+
+}

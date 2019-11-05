@@ -17,7 +17,18 @@ namespace Hoteleria
 		{
 			InitializeComponent();
 			usuario = user;
-			string[] alias = { "Cod ", "´nkk",  "Estado" };
+            string[] alias = { "Cod ", "Nombre Servicio", "Estado" };
+            navegador1.asignarAlias(alias);
+            navegador1.asignarSalida(this);
+            Color Hotel = Color.FromArgb(171, 166, 191);
+            navegador1.asignarColorFondo(Hotel);
+            navegador1.asignarColorFuente(Color.Black);
+            navegador1.asignarComboConTabla("tbl_servicios", "nombreServicio", 1);
+            navegador1.asignarAyuda("11");
+            navegador1.asignarTabla("tbl_comandas");
+            navegador1.asignarNombreForm("Comandas");
+
+            /* string[] alias = { "Cod ", "´nkk",  "Estado" };
 			navegador1.asignarAlias(alias);
 			navegador1.asignarSalida(this);
 			navegador1.asignarColorFondo(Color.LightBlue);
@@ -25,8 +36,8 @@ namespace Hoteleria
 			navegador1.asignarComboConTabla("tbl_servicios", "KidServicio",0);
 			navegador1.asignarAyuda("1");
 			navegador1.asignarTabla("tbl_comandas");
-			navegador1.asignarNombreForm("Comandas");
-		}
+			navegador1.asignarNombreForm("Comandas"); */
+        }
 
 		private void Frm_TipoHabitacion_Load(object sender, EventArgs e)
 		{

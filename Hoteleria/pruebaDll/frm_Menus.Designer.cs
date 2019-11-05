@@ -47,7 +47,7 @@
             this.Controls.Add(this.navegador1);
             this.Name = "frm_Menus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frn_menus";
+            this.Text = "Menus";
             this.Load += new System.EventHandler(this.Frm_TipoHabitacion_Load);
             this.ResumeLayout(false);
 

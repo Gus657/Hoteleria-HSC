@@ -1,0 +1,29 @@
+/*`tbl_tipo_habitacion`*/
+INSERT INTO `tbl_tipo_habitacion` (`KidTipoHabitacion`, `numeroCamas`, `numeroAmbientes`, `numeroPersonas`, `estado`) VALUES ('Especial', '5', '8', '2', '1');
+
+INSERT INTO `tbl_tipo_habitacion` (`KidTipoHabitacion`, `numeroCamas`, `numeroAmbientes`, `numeroPersonas`, `estado`) VALUES ('Normal', 5, 6, '6', 1);
+
+/*`tbl_categorias_habitacion`*/
+INSERT INTO `tbl_categorias_habitacion` (`KidCategoria`, `estado`) VALUES
+('Familiar', 1),
+('Individual', 1);
+/* `tbl_habitaciones` */
+INSERT INTO `tbl_habitaciones` (`KidNumeroHabitacion`, `KidTipoHabitacion`, `KidCategoria`, `precio`, `estado`) VALUES
+(1, 'Especial', 'Familiar', 1500, 1),
+(3, 'Especial', 'Individual', 3000, 1),
+(5, 'Especial', 'Familiar', 775, 1);
+/* `tbl_salones` */
+INSERT INTO `tbl_salones` (`KidNumeroSalon`, `capacidad`, `precio`, `estado`) VALUES ('1', '20', '1200', '1');
+INSERT INTO `tbl_salones` (`KidNumeroSalon`, `capacidad`, `precio`, `estado`) VALUES ('2', '20', '3000', '1');
+
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('1', 'Ayuda Hoteleria/ayuda hotel.chm', 'DMI.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('2', ' Ayuda Hoteleria/ayuda hotel.chm', 'Habitaciones.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('3', 'Ayuda Hoteleria/ayuda hotel.chm', 'Tipodehabitaciones.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('4', 'Ayuda Hoteleria/ayuda hotel.chm', 'CategoriaHabitaciones.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('5', 'Ayuda Hoteleria/ayuda hotel.chm', 'Salones.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('6', 'Ayuda Hoteleria/ayuda hotel.chm', 'Mesa.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('7', 'Ayuda Hoteleria/ayuda hotel.chm', 'Tienda.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('8', 'Ayuda Hoteleria/ayuda hotel.chm', 'Menu.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('9', 'Ayuda Hoteleria/ayuda hotel.chm', 'Area.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('10', 'Ayuda Hoteleria/ayuda hotel.chm', 'Servicios.html');
+INSERT INTO `ayuda` (`Id_ayuda`, `Ruta`, `indice`) VALUES ('11', 'Ayuda Hoteleria/ayuda hotel.chm', 'Comanda.html');

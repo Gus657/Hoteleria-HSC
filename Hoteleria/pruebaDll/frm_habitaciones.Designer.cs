@@ -48,7 +48,7 @@
             this.Controls.Add(this.navegador1);
             this.Name = "frm_Habitaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Habitaciones";
             this.Load += new System.EventHandler(this.Frm_habitaciones_Load);
             this.ResumeLayout(false);
 

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DMI">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MDI">
+			<param name="Local" value="DMI.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Hotel">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Habitaciones">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Habitaciones">
+				<param name="Local" value="Habitaciones.html">
+				<param name="ImageNumber" value="2">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Tipo de Habitaciones">
+				<param name="Local" value="Tipodehabitaciones.html">
+				<param name="ImageNumber" value="2">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Categoria de Habitaciones">
+				<param name="Local" value="CategoriaHabitaciones.html">
+				<param name="ImageNumber" value="2">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Servicios">
+			<param name="ImageNumber" value="1">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Comanda">
+				<param name="Local" value="Comanda.html">
+				<param name="ImageNumber" value="2">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Area">
+		<param name="Local" value="Area.html">
+		<param name="ImageNumber" value="2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Salones">
+		<param name="Local" value="Salones.html">
+		<param name="ImageNumber" value="2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Objetos Perdidos">
+		<param name="Local" value="ObjetosP.html">
+		<param name="ImageNumber" value="2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Restaurante">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Mesas">
+			<param name="Local" value="Mesa.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Menu">
+			<param name="Local" value="Menu.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tiendas">
+			<param name="Local" value="Tienda.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Recetas">
+			<param name="Local" value="Recetas.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Platillos">
+			<param name="Local" value="Platillos.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

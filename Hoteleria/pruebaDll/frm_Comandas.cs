@@ -20,7 +20,7 @@ namespace Hoteleria
             string[] alias = { "Cod ", "Nombre Servicio", "Estado" };
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
-            Color Hotel = Color.FromArgb(171, 166, 191);
+            Color Hotel = Color.FromArgb(253, 254, 254);
             navegador1.asignarColorFondo(Hotel);
             navegador1.asignarColorFuente(Color.Black);
             navegador1.asignarComboConTabla("tbl_servicios", "nombreServicio", 1);

@@ -1,0 +1,30 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Ayuda-Hotel.chm
+Contents file=Ayuda-Hotel.hhc
+Default Window=Ayuda-Hotel
+Display compile progress=No
+Language=0x100a Español (Guatemala)
+
+[WINDOWS]
+Ayuda-Hotel="ayuda","Ayuda-Hotel.hhc",,"DMI.html","DMI.html","Habitaciones.html","Habitaciones","Mesa.html","Mesas",0x23520,,0xc3066,,,,,,,,0
+
+
+[FILES]
+Area.html
+CategoriaHabitaciones.html
+Comanda.html
+DMI.html
+Habitaciones.html
+Menu.html
+Mesa.html
+ObjetosP.html
+Platillos.html
+Recetas.html
+Salones.html
+Servicios.html
+Tienda.html
+Tipodehabitaciones.html
+
+[INFOTYPES]
+

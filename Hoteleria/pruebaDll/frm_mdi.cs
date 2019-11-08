@@ -144,8 +144,10 @@ namespace Hoteleria
 
 		private void ServiciosToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			
-		}
+            frm_Servicios nuevo = new frm_Servicios(sIdUsuario);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
 
 		private void AreasToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -241,6 +243,25 @@ namespace Hoteleria
             frm_Servicios nuevo = new frm_Servicios(sIdUsuario);
             nuevo.MdiParent = this;
             nuevo.Show();
+        }
+
+        private void AreasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Areas nuevo = new frm_Areas(sIdUsuario);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
+
+        private void ComandasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Comandas nuevo = new frm_Comandas(sIdUsuario);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
+
+        private void HERRAMINENTASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

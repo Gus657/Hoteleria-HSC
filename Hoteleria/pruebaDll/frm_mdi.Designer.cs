@@ -38,8 +38,6 @@
             this.tipoHabitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comandasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.areasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salonesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.objetosPerdidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restauranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +57,8 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.lbl_id_usuario = new System.Windows.Forms.Label();
-            this.serviciosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.areasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comandasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -98,11 +97,11 @@
             // bODEGAToolStripMenuItem
             // 
             this.bODEGAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.habitacionesToolStripMenuItem,
-            this.serviciosToolStripMenuItem,
             this.areasToolStripMenuItem,
-            this.salonesToolStripMenuItem,
-            this.objetosPerdidosToolStripMenuItem});
+            this.habitacionesToolStripMenuItem,
+            this.objetosPerdidosToolStripMenuItem,
+            this.serviciosToolStripMenuItem,
+            this.salonesToolStripMenuItem});
             this.bODEGAToolStripMenuItem.Name = "bODEGAToolStripMenuItem";
             this.bODEGAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bODEGAToolStripMenuItem.Text = "Hotel";
@@ -141,27 +140,10 @@
             // 
             // serviciosToolStripMenuItem
             // 
-            this.serviciosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.serviciosToolStripMenuItem1,
-            this.comandasToolStripMenuItem});
             this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
             this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.serviciosToolStripMenuItem.Text = "Servicios";
             this.serviciosToolStripMenuItem.Click += new System.EventHandler(this.ServiciosToolStripMenuItem_Click);
-            // 
-            // comandasToolStripMenuItem
-            // 
-            this.comandasToolStripMenuItem.Name = "comandasToolStripMenuItem";
-            this.comandasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.comandasToolStripMenuItem.Text = "Comandas";
-            this.comandasToolStripMenuItem.Click += new System.EventHandler(this.ComandasToolStripMenuItem_Click);
-            // 
-            // areasToolStripMenuItem
-            // 
-            this.areasToolStripMenuItem.Name = "areasToolStripMenuItem";
-            this.areasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.areasToolStripMenuItem.Text = "Areas";
-            this.areasToolStripMenuItem.Click += new System.EventHandler(this.AreasToolStripMenuItem_Click);
             // 
             // salonesToolStripMenuItem
             // 
@@ -180,11 +162,12 @@
             // restauranteToolStripMenuItem
             // 
             this.restauranteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comandasToolStripMenuItem1,
             this.mesasToolStripMenuItem,
             this.menusToolStripMenuItem,
-            this.tiendasToolStripMenuItem,
+            this.platillosToolStripMenuItem,
             this.recetasToolStripMenuItem,
-            this.platillosToolStripMenuItem});
+            this.tiendasToolStripMenuItem});
             this.restauranteToolStripMenuItem.Name = "restauranteToolStripMenuItem";
             this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.restauranteToolStripMenuItem.Text = "Restaurante";
@@ -192,35 +175,35 @@
             // mesasToolStripMenuItem
             // 
             this.mesasToolStripMenuItem.Name = "mesasToolStripMenuItem";
-            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mesasToolStripMenuItem.Text = "Mesas";
             this.mesasToolStripMenuItem.Click += new System.EventHandler(this.MesasToolStripMenuItem_Click);
             // 
             // menusToolStripMenuItem
             // 
             this.menusToolStripMenuItem.Name = "menusToolStripMenuItem";
-            this.menusToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.menusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.menusToolStripMenuItem.Text = "Menus";
             this.menusToolStripMenuItem.Click += new System.EventHandler(this.MenusToolStripMenuItem_Click);
             // 
             // tiendasToolStripMenuItem
             // 
             this.tiendasToolStripMenuItem.Name = "tiendasToolStripMenuItem";
-            this.tiendasToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.tiendasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tiendasToolStripMenuItem.Text = "Tiendas";
             this.tiendasToolStripMenuItem.Click += new System.EventHandler(this.TiendasToolStripMenuItem_Click);
             // 
             // recetasToolStripMenuItem
             // 
             this.recetasToolStripMenuItem.Name = "recetasToolStripMenuItem";
-            this.recetasToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.recetasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.recetasToolStripMenuItem.Text = "Recetas";
             this.recetasToolStripMenuItem.Click += new System.EventHandler(this.RecetasToolStripMenuItem_Click);
             // 
             // platillosToolStripMenuItem
             // 
             this.platillosToolStripMenuItem.Name = "platillosToolStripMenuItem";
-            this.platillosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.platillosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.platillosToolStripMenuItem.Text = "Platillos";
             this.platillosToolStripMenuItem.Click += new System.EventHandler(this.PlatillosToolStripMenuItem_Click);
             // 
@@ -241,8 +224,9 @@
             this.hERRAMINENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sEGURIDADToolStripMenuItem1});
             this.hERRAMINENTASToolStripMenuItem.Name = "hERRAMINENTASToolStripMenuItem";
-            this.hERRAMINENTASToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
-            this.hERRAMINENTASToolStripMenuItem.Text = "HERRAMINENTAS";
+            this.hERRAMINENTASToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.hERRAMINENTASToolStripMenuItem.Text = "HERRAMIENTAS";
+            this.hERRAMINENTASToolStripMenuItem.Click += new System.EventHandler(this.HERRAMINENTASToolStripMenuItem_Click);
             // 
             // sEGURIDADToolStripMenuItem1
             // 
@@ -293,18 +277,29 @@
             // lbl_id_usuario
             // 
             this.lbl_id_usuario.AutoSize = true;
-            this.lbl_id_usuario.Location = new System.Drawing.Point(535, 9);
+            this.lbl_id_usuario.BackColor = System.Drawing.SystemColors.Info;
+            this.lbl_id_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_id_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_id_usuario.Location = new System.Drawing.Point(935, 4);
+            this.lbl_id_usuario.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.lbl_id_usuario.Name = "lbl_id_usuario";
-            this.lbl_id_usuario.Size = new System.Drawing.Size(35, 13);
+            this.lbl_id_usuario.Size = new System.Drawing.Size(125, 20);
             this.lbl_id_usuario.TabIndex = 4;
-            this.lbl_id_usuario.Text = "label1";
+            this.lbl_id_usuario.Text = "Usuario Activo";
             // 
-            // serviciosToolStripMenuItem1
+            // areasToolStripMenuItem
             // 
-            this.serviciosToolStripMenuItem1.Name = "serviciosToolStripMenuItem1";
-            this.serviciosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.serviciosToolStripMenuItem1.Text = "Servicios";
-            this.serviciosToolStripMenuItem1.Click += new System.EventHandler(this.ServiciosToolStripMenuItem1_Click);
+            this.areasToolStripMenuItem.Name = "areasToolStripMenuItem";
+            this.areasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.areasToolStripMenuItem.Text = "Areas";
+            this.areasToolStripMenuItem.Click += new System.EventHandler(this.AreasToolStripMenuItem_Click);
+            // 
+            // comandasToolStripMenuItem1
+            // 
+            this.comandasToolStripMenuItem1.Name = "comandasToolStripMenuItem1";
+            this.comandasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.comandasToolStripMenuItem1.Text = "Comandas";
+            this.comandasToolStripMenuItem1.Click += new System.EventHandler(this.ComandasToolStripMenuItem1_Click);
             // 
             // frm_mdi
             // 
@@ -343,14 +338,12 @@
 		private System.Windows.Forms.ToolStripMenuItem tipoHabitacionToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem categoríaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem areasToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem salonesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem restauranteToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem mesasToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem menusToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tiendasToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem comandasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iNICIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pROCESOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTESToolStripMenuItem;
@@ -363,7 +356,8 @@
 		private System.Windows.Forms.ToolStripMenuItem objetosPerdidosToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem recetasToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem platillosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem areasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comandasToolStripMenuItem1;
     }
 }
 

@@ -17,7 +17,7 @@ namespace Hoteleria
         {
             InitializeComponent();
             usuario = user;
-            string[] alias = {"No. Habitacion", "Tipo Habitacion", "Categoria","Precio","Estado"};
+            string[] alias = {"No. Habitacion", "Tipo Habitacion", "Categoria","Precio","Estado", "Disponibilidad"};
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
             Color Hotel = Color.FromArgb(253, 254, 254);

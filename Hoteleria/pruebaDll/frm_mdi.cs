@@ -263,5 +263,17 @@ namespace Hoteleria
         {
 
         }
+
+        private void RecepciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HSC_CheckIn nuevo = new HSC_CheckIn(sIdUsuario, 0, 0);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
     }
 }

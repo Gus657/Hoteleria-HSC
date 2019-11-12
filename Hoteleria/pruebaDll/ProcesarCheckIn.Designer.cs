@@ -36,8 +36,7 @@
             this.lb_precio = new System.Windows.Forms.Label();
             this.lb_fecha = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_codigoCI = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.gbox_habitacion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,42 +114,39 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("HP Simplified", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(629, 365);
+            this.button1.Location = new System.Drawing.Point(0, 345);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 57);
+            this.button1.Size = new System.Drawing.Size(800, 70);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Registrar";
+            this.button1.Text = "REGISTRAR";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // label1
+            // button2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("HP Simplified", 15.75F);
-            this.label1.Location = new System.Drawing.Point(51, 294);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 28);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Código de Check-In:";
-            // 
-            // txt_codigoCI
-            // 
-            this.txt_codigoCI.Font = new System.Drawing.Font("HP Simplified", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigoCI.Location = new System.Drawing.Point(235, 297);
-            this.txt_codigoCI.Name = "txt_codigoCI";
-            this.txt_codigoCI.Size = new System.Drawing.Size(100, 29);
-            this.txt_codigoCI.TabIndex = 11;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("HP Simplified", 14.25F);
+            this.button2.Location = new System.Drawing.Point(0, 294);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(800, 51);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "CANCELAR";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // ProcesarCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txt_codigoCI);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(800, 415);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lb_fecha);
             this.Controls.Add(this.lb_precio);
@@ -158,6 +154,7 @@
             this.Controls.Add(this.cb_clientes);
             this.Controls.Add(this.gbox_habitacion);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
             this.Name = "ProcesarCheckIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Procesar CheckIn";
@@ -179,7 +176,6 @@
         private System.Windows.Forms.Label lb_precio;
         private System.Windows.Forms.Label lb_fecha;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_codigoCI;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -21,15 +21,13 @@ namespace Hoteleria
 
         string sIdUsuario;
         string[] listaBotones;
-        public HSC_CheckIn(string usuario, int no, int estado)
+        int[] listaCodH;
+        public HSC_CheckIn(string usuario)
         {
-            InitializeComponent();
-            //cambiarEstado1(no, estado);
+            InitializeComponent();            
             sIdUsuario = usuario;
-            cantidad();
-            //int auxCant = 14;
-            listaBotones = new string[max];
-            //crearBoton(auxCant);
+            cantidad();            
+            listaBotones = new string[max];            
             datosHabitaciones();
         }
 
@@ -64,6 +62,7 @@ namespace Hoteleria
             OdbcCommand codigo = new OdbcCommand();
             codigo.Connection = conn;
             codigo.CommandText = ("SELECT * FROM tbl_habitaciones WHERE estado=1");
+            listaCodH = new int[max];
             try
             {
                 OdbcDataReader resultadoSQL = codigo.ExecuteReader(CommandBehavior.CloseConnection);
@@ -75,9 +74,9 @@ namespace Hoteleria
                 int contador = 1;
                 while (resultadoSQL.Read())
                 {
-
                     auxCodH = Convert.ToInt32(resultadoSQL.GetString(0));
                     auxColor = Convert.ToInt32(resultadoSQL.GetString(5));
+                    listaCodH[contador] = auxCodH;
                     //MessageBox.Show("auxCodH: " + auxCodH);
                     try
                     {
@@ -88,7 +87,7 @@ namespace Hoteleria
                             boton[contador].Width = 120;
                             boton[contador].Height = 60;
 
-                            nombreBoton = "lb_Habitacion" + auxCodH;
+                            nombreBoton = "" + auxCodH; //pequeño cambio 
                             boton[contador].Name = nombreBoton;
                             listaBotones[contador] = boton[contador].Name;
 
@@ -106,8 +105,11 @@ namespace Hoteleria
                             }
 
                             boton[contador].Text = String.Format("{0}", "Habitación " + auxCodH);
+                            boton[contador].Font = new Font("HP Simplified", 14);
                             boton[contador].Top = 82 + (contador * 75);
-                            boton[contador].Left = 50;
+                            boton[contador].Left = 50;                            
+                            boton[contador].Click += new EventHandler((No1, No2) => MiBoton_Click(No1, No2, auxCodH));
+                            //MessageBox.Show("CodHab CREAR: " + auxCodH);
                             this.Controls.Add(boton[contador]);
                         }
                         else if (contador >= 5 && contador <= 9)
@@ -116,7 +118,7 @@ namespace Hoteleria
                             boton[contador].Width = 120;
                             boton[contador].Height = 60;
 
-                            nombreBoton = "lb_Habitacion" + auxCodH;
+                            nombreBoton = "" + auxCodH; //pequeño cambio 
                             boton[contador].Name = nombreBoton;
                             listaBotones[contador] = boton[contador].Name;
 
@@ -134,8 +136,11 @@ namespace Hoteleria
                             }
 
                             boton[contador].Text = String.Format("{0}", "Habitación " + auxCodH);
+                            boton[contador].Font = new Font("HP Simplified", 14);
                             boton[contador].Top = 82 + (aux * 75);
                             boton[contador].Left = 200;
+                            boton[contador].Click += new EventHandler((No1, No2) => MiBoton_Click(No1, No2, auxCodH));
+                            //MessageBox.Show("CodHab CREAR: " + auxCodH);
                             aux++;
                             this.Controls.Add(boton[contador]);
                         }
@@ -145,7 +150,7 @@ namespace Hoteleria
                             boton[contador].Width = 120;
                             boton[contador].Height = 60;
 
-                            nombreBoton = "lb_Habitacion" + auxCodH;
+                            nombreBoton = "" + auxCodH; //pequeño cambio 
                             boton[contador].Name = nombreBoton;
                             listaBotones[contador] = boton[contador].Name;
 
@@ -163,8 +168,11 @@ namespace Hoteleria
                             }
 
                             boton[contador].Text = String.Format("{0}", "Habitación " + auxCodH);
+                            boton[contador].Font = new Font("HP Simplified", 14);
                             boton[contador].Top = 82 + (aux2 * 75);
                             boton[contador].Left = 350;
+                            boton[contador].Click += new EventHandler((No1, No2) => MiBoton_Click(No1, No2, auxCodH));
+                            //MessageBox.Show("CodHab CREAR: " + auxCodH);
                             aux2++;
                             this.Controls.Add(boton[contador]);
                         }
@@ -188,12 +196,18 @@ namespace Hoteleria
                 conn.Close();
             }
         }
-       
-        private void Btn_Habitacion1_Click(object sender, EventArgs e)
+        void MiBoton_Click(object sender1, EventArgs e1, int codHab)
         {
-            ProcesarCheckIn nuevo = new ProcesarCheckIn(1, sIdUsuario);
+            Button boton = sender1 as Button;
+            //MessageBox.Show(boton.Name);
+            int codigo = Convert.ToInt32(boton.Name); 
+            ProcesarCheckIn nuevo = new ProcesarCheckIn(codigo, sIdUsuario);
             this.Close();
             nuevo.Show();
+        }
+        private void Btn_Habitacion1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Seleccione una Habitación!", "Habitaciones", MessageBoxButtons.OK);
         }
 
         private void Btn_Habitacion2_Click(object sender, EventArgs e)
@@ -205,7 +219,8 @@ namespace Hoteleria
 
         private void HSC_CheckIn_Load(object sender, EventArgs e)
         {
-
+            btn_Habitacion1.Top = 64;  
+            btn_Habitacion1.Left = 40; 
         }
     }
 }

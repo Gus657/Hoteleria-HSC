@@ -271,7 +271,7 @@ namespace Hoteleria
 
         private void CheckInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HSC_CheckIn nuevo = new HSC_CheckIn(sIdUsuario, 0, 0);
+            HSC_CheckIn nuevo = new HSC_CheckIn(sIdUsuario);
             nuevo.MdiParent = this;
             nuevo.Show();
         }

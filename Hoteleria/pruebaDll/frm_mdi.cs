@@ -29,10 +29,7 @@ namespace Hoteleria
             Form childForm = new Form();
             childForm.MdiParent = this;
             childForm.Text = "Ventana " + childFormNumber++;
-            childForm.Show();
-            string AsRuta;
-            string AsIndice;
-            
+            childForm.Show();                        
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -274,6 +271,39 @@ namespace Hoteleria
             HSC_CheckIn nuevo = new HSC_CheckIn(sIdUsuario);
             nuevo.MdiParent = this;
             nuevo.Show();
+        }
+
+        private void ControlDeMesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HSC_ControlMesas nuevo = new HSC_ControlMesas(sIdUsuario);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
+
+        private void ProducciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RequerimientoProduccion nuevo = new RequerimientoProduccion(sIdUsuario);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
+
+        private void CheckOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HSC_CheckOut nuevo = new HSC_CheckOut(sIdUsuario);
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
+
+        private void LogOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_mdi nuevo = new frm_mdi();
+            nuevo.Show();
+        }
+
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

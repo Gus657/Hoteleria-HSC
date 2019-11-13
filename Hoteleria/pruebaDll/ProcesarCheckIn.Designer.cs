@@ -62,7 +62,7 @@
             // 
             // gbox_habitacion
             // 
-            this.gbox_habitacion.BackColor = System.Drawing.SystemColors.Window;
+            this.gbox_habitacion.BackColor = System.Drawing.Color.Azure;
             this.gbox_habitacion.Controls.Add(this.lb_detalles);
             this.gbox_habitacion.Font = new System.Drawing.Font("HP Simplified", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbox_habitacion.Location = new System.Drawing.Point(56, 81);
@@ -144,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(800, 415);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

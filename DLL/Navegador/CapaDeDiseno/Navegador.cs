@@ -21,6 +21,7 @@ namespace CapaDeDiseno
         string tabla = "def";
         string nomForm;
         int pos = 8;
+		string idRepo = "";
 		
 		int[] modoCampoCombo = new int[40];
 		int noCampos = 1;
@@ -106,6 +107,8 @@ namespace CapaDeDiseno
                                     head++;
                                 }
                                 CreaComponentes();
+								colorTitulo();
+								lblTabla.ForeColor = Cfuente;
                                 deshabilitarcampos_y_botones();
                                 
                                 Btn_Modificar.Enabled = true;
@@ -218,7 +221,17 @@ namespace CapaDeDiseno
 
         //-----------------------------------------------Funciones-----------------------------------------------//
         
+		void colorTitulo()
+		{
+			foreach (Control componente in Controls)
+			{
+				if (componente is Label)
+				{
 
+					componente.ForeColor = Cfuente;
+				}
+			}
+		}
         public void ObtenerIdUsuario(string idUsuario)
         {
             this.idUsuario = idUsuario;            
@@ -316,8 +329,12 @@ namespace CapaDeDiseno
                 }
             }
         }
- 
-        public void asignarSalida(Form salida)
+
+		public void asignarReporte(string repo)
+		{
+			idRepo = repo;
+		}
+		public void asignarSalida(Form salida)
         {
             cerrar = salida;
         }
@@ -1405,16 +1422,53 @@ namespace CapaDeDiseno
 
         private void Btn_Consultar_Click(object sender, EventArgs e)
         {
-            //DLL DE CONSULTAS
+			//DLL DE CONSULTAS
+			sentencia con = new sentencia();
+			bool per1 = con.consultarPermisos(idUsuario, idAplicacion, 1);
+			bool per2 = con.consultarPermisos(idUsuario, idAplicacion, 2);
+			bool per3 = con.consultarPermisos(idUsuario, idAplicacion, 3);
+			bool per4 = con.consultarPermisos(idUsuario, idAplicacion, 4);
+			bool per5 = con.consultarPermisos(idUsuario, idAplicacion, 5);
 
-            //habilitar y deshabilitar según Usuario
-            botonesYPermisos();
+			if (per1==true && per2 == true && per3 == true && per4 == true && per5 == true)
+			{
+				Compleja nuevo = new Compleja(idUsuario);
+				nuevo.Show();
+			}
+			else
+			{
+				 Simple nueva = new Simple(idUsuario);
+				nueva.Show();
+			}
+
+			//habilitar y deshabilitar según Usuario
+			botonesYPermisos();
         }
 
         private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
-            //DLL DE IMPRESION, FORATO DE REPORTES.
-
+			//DLL DE IMPRESION, FORATO DE REPORTES.
+			string llave = "";
+			if (idRepo!="")
+			{
+				llave= logic.ObtenerIdReporte(idRepo);
+				
+			}
+			else
+			{
+				MessageBox.Show("No se asigno ningun reporte....");
+			}
+			
+			if (llave!="")
+			{
+				Clientes cl = new Clientes(llave);
+				cl.Show();
+			}
+			else
+			{
+				MessageBox.Show("El Id Asignado es incorrecto");
+			}
+			
             //habilitar y deshabilitar según Usuario
             botonesYPermisos();
         }

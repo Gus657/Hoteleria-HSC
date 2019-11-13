@@ -23,7 +23,7 @@ namespace Hoteleria
             Color Hotel = Color.FromArgb(253, 254, 254);
             navegador1.asignarColorFondo(Hotel);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarAyuda("5");
+            navegador1.asignarAyuda("305");
 			navegador1.asignarTabla("tbl_salones");
 			navegador1.asignarNombreForm("Salones");
 		}
@@ -35,5 +35,10 @@ namespace Hoteleria
 			navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
 			navegador1.ObtenerIdAplicacion(aplicacionActiva);
 		}
-	}
+
+        private void Navegador1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -24,6 +24,7 @@ namespace Hoteleria
             navegador1.asignarColorFondo(Hotel);
             navegador1.asignarColorFuente(Color.Black);
             navegador1.asignarAyuda("309");
+            navegador1.asignarReporte("309");
             navegador1.asignarTabla("tbl_areas");
             navegador1.asignarNombreForm("Areas");
         }
@@ -35,5 +36,10 @@ namespace Hoteleria
 			navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
 			navegador1.ObtenerIdAplicacion(aplicacionActiva);
 		}
-	}
+
+        private void Navegador1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -332,9 +332,6 @@ C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HH
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.ProcesarCheckOut.resources
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.HSC_MesaLibOc.resources
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.HSC_ControlMesas.resources
-C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\Hoteleria.exe.config
-C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\Hoteleria.exe
-C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.exe
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\ConsultasInteligentes.dll
@@ -360,3 +357,71 @@ C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HH
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\ConsultasInteligentes.pdb
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaLogica_Consultas.pdb
 C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\CapaDatos_Consultas.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\Hoteleria.exe.config
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\Hoteleria.exe
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\Hoteleria.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDeDiseno.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDeLogica.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\ConsultasInteligentes.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\FlashControlV71.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDeDatos.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaLogica_Consultas.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\stdole.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDatos_Consultas.dll
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDatos.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDeDiseno.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDiseno.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaLogica.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDeLogica.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\ConsultasInteligentes.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDeDatos.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaLogica_Consultas.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\bin\Debug\CapaDatos_Consultas.pdb
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csprojAssemblyReference.cache
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Habitaciones.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Platillos.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Recetas.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_ObjetosPerdidos.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Mesas.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Menus.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_CategoriaHabitacion.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Areas.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Comandas.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Salones.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Tiendas.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_Servicios.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_TipoHabitacion.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.frm_mdi.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.HSC_ControlMesas.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.HSC_CheckIn.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.HSC_CheckOut.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.HSC_MesaLibOc.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.ProcesarCheckIn.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.ProcesarCheckOut.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.Properties.Resources.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.RequerimientoProduccion.resources
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csproj.GenerateResource.cache
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csproj.CoreCompileInputs.cache
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.csproj.CopyComplete
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.exe
+C:\Users\Randy\Desktop\Hoteleria-HSC-master\Hoteleria\pruebaDll\obj\Debug\Hoteleria.pdb
+C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\Hoteleria.exe.config
+C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\bin\Debug\Hoteleria.exe
+C:\Users\Randy\Desktop\UMG\8.vo Semestre\Análisis de Sistemas II\3er Parcial\HHSC\Hoteleria-HSC\Hoteleria\pruebaDll\obj\Debug\Hoteleria.exe

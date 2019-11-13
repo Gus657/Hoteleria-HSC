@@ -59,11 +59,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="conexion.cs" />
     <Compile Include="frm_Habitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Habitaciones.Designer.cs">
       <DependentUpon>frm_Habitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Platillos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Platillos.Designer.cs">
+      <DependentUpon>frm_Platillos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Recetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Recetas.Designer.cs">
+      <DependentUpon>frm_Recetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ObjetosPerdidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ObjetosPerdidos.Designer.cs">
+      <DependentUpon>frm_ObjetosPerdidos.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Mesas.cs">
       <SubType>Form</SubType>
@@ -125,10 +144,61 @@
     <Compile Include="frm_mdi.Designer.cs">
       <DependentUpon>frm_mdi.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSC-ControlMesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC-ControlMesas.Designer.cs">
+      <DependentUpon>HSC-ControlMesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC_CheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC_CheckIn.Designer.cs">
+      <DependentUpon>HSC_CheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC_CheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC_CheckOut.Designer.cs">
+      <DependentUpon>HSC_CheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSC_MesaLibOc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSC_MesaLibOc.Designer.cs">
+      <DependentUpon>HSC_MesaLibOc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesarCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesarCheckIn.Designer.cs">
+      <DependentUpon>ProcesarCheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesarCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesarCheckOut.Designer.cs">
+      <DependentUpon>ProcesarCheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequerimientoProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequerimientoProduccion.Designer.cs">
+      <DependentUpon>RequerimientoProduccion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frm_Habitaciones.resx">
       <DependentUpon>frm_Habitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Platillos.resx">
+      <DependentUpon>frm_Platillos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Recetas.resx">
+      <DependentUpon>frm_Recetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ObjetosPerdidos.resx">
+      <DependentUpon>frm_ObjetosPerdidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Mesas.resx">
       <DependentUpon>frm_Mesas.cs</DependentUpon>
@@ -160,6 +230,24 @@
     <EmbeddedResource Include="frm_mdi.resx">
       <DependentUpon>frm_mdi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSC-ControlMesas.resx">
+      <DependentUpon>HSC-ControlMesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC_CheckIn.resx">
+      <DependentUpon>HSC_CheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC_CheckOut.resx">
+      <DependentUpon>HSC_CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSC_MesaLibOc.resx">
+      <DependentUpon>HSC_MesaLibOc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesarCheckIn.resx">
+      <DependentUpon>ProcesarCheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesarCheckOut.resx">
+      <DependentUpon>ProcesarCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -170,6 +258,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RequerimientoProduccion.resx">
+      <DependentUpon>RequerimientoProduccion.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -182,6 +273,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-habitacion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-habitacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-habitacion2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-habitacion3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-habitacion21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-habitacion2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quetzal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

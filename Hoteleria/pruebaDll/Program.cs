@@ -17,6 +17,7 @@ namespace Hoteleria
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_mdi ());
+            //Application.Run(new HSC_CheckIn("rchocm", 1, 1));
         }
     }
 }

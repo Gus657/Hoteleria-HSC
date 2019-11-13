@@ -17,15 +17,16 @@ namespace Hoteleria
 		{
 			InitializeComponent();
 			usuario = user;
-			string[] alias = { "Cod Area", "No. Camas","Estado" };
-			navegador1.asignarAlias(alias);
-			navegador1.asignarSalida(this);
-			navegador1.asignarColorFondo(Color.LightBlue);
-			navegador1.asignarColorFuente(Color.BlueViolet);
-			navegador1.asignarAyuda("1");
-			navegador1.asignarTabla("tbl_areas");
-			navegador1.asignarNombreForm("Areas");
-		}
+            string[] alias = { "Cod Area", "Nombre Area", "Estado" };
+            navegador1.asignarAlias(alias);
+            navegador1.asignarSalida(this);
+            Color Hotel = Color.FromArgb(253, 254, 254);
+            navegador1.asignarColorFondo(Hotel);
+            navegador1.asignarColorFuente(Color.Black);
+            navegador1.asignarAyuda("309");
+            navegador1.asignarTabla("tbl_areas");
+            navegador1.asignarNombreForm("Areas");
+        }
 
 		private void Frm_TipoHabitacion_Load(object sender, EventArgs e)
 		{

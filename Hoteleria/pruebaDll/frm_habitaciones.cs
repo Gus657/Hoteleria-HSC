@@ -17,13 +17,13 @@ namespace Hoteleria
         {
             InitializeComponent();
             usuario = user;
-            string[] alias = {  "No. Habitacion", "Tipo Habitacion", "Categoria","Precio","Estado" };
+            string[] alias = {"No. Habitacion", "Tipo Habitacion", "Categoria","Precio","Estado", "Disponibilidad"};
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
-            Color Hotel = Color.FromArgb(171, 166, 191);
+            Color Hotel = Color.FromArgb(253, 254, 254);
             navegador1.asignarColorFondo(Hotel);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarAyuda("1");
+            navegador1.asignarAyuda("302");
             navegador1.asignarComboConTabla("tbl_tipo_habitacion", "KidTipoHabitacion",0);
             navegador1.asignarComboConTabla("tbl_categorias_habitacion", "KidCategoria",0);
             navegador1.asignarTabla("tbl_habitaciones");

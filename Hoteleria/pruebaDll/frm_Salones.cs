@@ -24,7 +24,8 @@ namespace Hoteleria
             navegador1.asignarColorFondo(Hotel);
             navegador1.asignarColorFuente(Color.Black);
             navegador1.asignarAyuda("305");
-			navegador1.asignarTabla("tbl_salones");
+            navegador1.asignarReporte("309");
+            navegador1.asignarTabla("tbl_salones");
 			navegador1.asignarNombreForm("Salones");
 		}
 

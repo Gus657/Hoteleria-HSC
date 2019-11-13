@@ -25,7 +25,8 @@ namespace Hoteleria
 			navegador1.asignarColorFuente(Color.Black);
 			navegador1.asignarComboConTabla("tbl_areas", "nombreArea", 1);
 			navegador1.asignarAyuda("307");
-			navegador1.asignarTabla("tbl_tiendas");
+            navegador1.asignarReporte("309");
+            navegador1.asignarTabla("tbl_tiendas");
 			navegador1.asignarNombreForm("Tiendas");
 		}
 

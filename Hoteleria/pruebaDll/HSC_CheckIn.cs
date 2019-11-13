@@ -14,7 +14,7 @@ namespace Hoteleria
 {
     public partial class HSC_CheckIn : Form
     {
-        OdbcConnection conn = new OdbcConnection("Dsn=navegador");
+        OdbcConnection conn = new OdbcConnection("Dsn=HSC");
         int auxColor;
         int auxCodH;
         int max;

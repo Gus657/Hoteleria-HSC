@@ -24,6 +24,7 @@ namespace Hoteleria
             navegador1.asignarColorFondo(Hotel);
             navegador1.asignarColorFuente(Color.Black);
             navegador1.asignarAyuda("302");
+            navegador1.asignarReporte("309");
             navegador1.asignarComboConTabla("tbl_tipo_habitacion", "KidTipoHabitacion",0);
             navegador1.asignarComboConTabla("tbl_categorias_habitacion", "KidCategoria",0);
             navegador1.asignarTabla("tbl_habitaciones");

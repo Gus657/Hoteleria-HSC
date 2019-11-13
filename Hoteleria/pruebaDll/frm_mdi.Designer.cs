@@ -57,7 +57,6 @@
             this.restauranteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDeMesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.producciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pROCESOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hERRAMINENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sEGURIDADToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +77,6 @@
             this.iNICIOToolStripMenuItem,
             this.mANTENIMIENTOSToolStripMenuItem,
             this.hOTELERÍAToolStripMenuItem,
-            this.pROCESOSToolStripMenuItem,
             this.rEPORTESToolStripMenuItem,
             this.hERRAMINENTASToolStripMenuItem,
             this.aYUDAToolStripMenuItem});
@@ -254,8 +252,8 @@
             this.administraciónToolStripMenuItem,
             this.restauranteToolStripMenuItem1});
             this.hOTELERÍAToolStripMenuItem.Name = "hOTELERÍAToolStripMenuItem";
-            this.hOTELERÍAToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.hOTELERÍAToolStripMenuItem.Text = "HOTELERÍA";
+            this.hOTELERÍAToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.hOTELERÍAToolStripMenuItem.Text = "PROCESOS";
             // 
             // administraciónToolStripMenuItem
             // 
@@ -263,7 +261,7 @@
             this.checkInToolStripMenuItem,
             this.checkOutToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.administraciónToolStripMenuItem.Text = "Administración";
             // 
             // checkInToolStripMenuItem
@@ -286,7 +284,7 @@
             this.controlDeMesasToolStripMenuItem,
             this.producciónToolStripMenuItem});
             this.restauranteToolStripMenuItem1.Name = "restauranteToolStripMenuItem1";
-            this.restauranteToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
+            this.restauranteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.restauranteToolStripMenuItem1.Text = "Restaurante";
             // 
             // controlDeMesasToolStripMenuItem
@@ -302,12 +300,6 @@
             this.producciónToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.producciónToolStripMenuItem.Text = "Producción";
             this.producciónToolStripMenuItem.Click += new System.EventHandler(this.ProducciónToolStripMenuItem_Click);
-            // 
-            // pROCESOSToolStripMenuItem
-            // 
-            this.pROCESOSToolStripMenuItem.Name = "pROCESOSToolStripMenuItem";
-            this.pROCESOSToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.pROCESOSToolStripMenuItem.Text = "PROCESOS";
             // 
             // rEPORTESToolStripMenuItem
             // 
@@ -427,7 +419,6 @@
 		private System.Windows.Forms.ToolStripMenuItem menusToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tiendasToolStripMenuItem;		
         private System.Windows.Forms.ToolStripMenuItem iNICIOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pROCESOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hERRAMINENTASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aYUDAToolStripMenuItem;

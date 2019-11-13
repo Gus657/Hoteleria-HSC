@@ -11,7 +11,7 @@ namespace Hoteleria
 
         public OdbcConnection probarConexion()
         {
-            OdbcConnection conn = new OdbcConnection("Dsn=Navegador");// creacion de la conexion via ODBC
+            OdbcConnection conn = new OdbcConnection("Dsn=HSC");// creacion de la conexion via ODBC
 
             try
             {

@@ -13,8 +13,8 @@ namespace Hoteleria
 {
     public partial class HSC_MesaLibOc : Form
     {
-        OdbcConnection conn = new OdbcConnection("Dsn=navegador");
-        OdbcConnection connAux = new OdbcConnection("Dsn=navegador");
+        OdbcConnection conn = new OdbcConnection("Dsn=HSC");
+        OdbcConnection connAux = new OdbcConnection("Dsn=HSC");
         string sIdUsuario;        
         char Area;
         int noMesa;

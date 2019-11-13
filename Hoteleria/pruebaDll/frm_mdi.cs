@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDiseno;
 using CapaDatos;
+using CapaDeDiseno;
 
 
 namespace Hoteleria
@@ -304,6 +305,13 @@ namespace Hoteleria
         private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void REPORTESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes nuevo = new Reportes();
+            nuevo.MdiParent = this;
+            nuevo.Show();
         }
     }
 }

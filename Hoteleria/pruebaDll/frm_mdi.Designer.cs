@@ -48,6 +48,13 @@
             this.platillosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recetasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hOTELERÍAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restauranteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeMesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.producciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROCESOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hERRAMINENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,12 +66,8 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.lbl_id_usuario = new System.Windows.Forms.Label();
-            this.hOTELERÍAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restauranteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +90,9 @@
             // 
             // iNICIOToolStripMenuItem
             // 
+            this.iNICIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logOutToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.iNICIOToolStripMenuItem.Name = "iNICIOToolStripMenuItem";
             this.iNICIOToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.iNICIOToolStripMenuItem.Text = "INICIO";
@@ -110,7 +116,7 @@
             this.serviciosToolStripMenuItem,
             this.salonesToolStripMenuItem});
             this.bODEGAToolStripMenuItem.Name = "bODEGAToolStripMenuItem";
-            this.bODEGAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bODEGAToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.bODEGAToolStripMenuItem.Text = "Hotel";
             this.bODEGAToolStripMenuItem.Click += new System.EventHandler(this.BODEGAToolStripMenuItem_Click);
             // 
@@ -183,7 +189,7 @@
             this.recetasToolStripMenuItem,
             this.tiendasToolStripMenuItem});
             this.restauranteToolStripMenuItem.Name = "restauranteToolStripMenuItem";
-            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restauranteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.restauranteToolStripMenuItem.Text = "Restaurante";
             // 
             // comandasToolStripMenuItem1
@@ -227,6 +233,61 @@
             this.tiendasToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.tiendasToolStripMenuItem.Text = "Tiendas";
             this.tiendasToolStripMenuItem.Click += new System.EventHandler(this.TiendasToolStripMenuItem_Click);
+            // 
+            // hOTELERÍAToolStripMenuItem
+            // 
+            this.hOTELERÍAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.administraciónToolStripMenuItem,
+            this.restauranteToolStripMenuItem1});
+            this.hOTELERÍAToolStripMenuItem.Name = "hOTELERÍAToolStripMenuItem";
+            this.hOTELERÍAToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.hOTELERÍAToolStripMenuItem.Text = "HOTELERÍA";
+            // 
+            // administraciónToolStripMenuItem
+            // 
+            this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkInToolStripMenuItem,
+            this.checkOutToolStripMenuItem});
+            this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.administraciónToolStripMenuItem.Text = "Administración";
+            // 
+            // checkInToolStripMenuItem
+            // 
+            this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
+            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkInToolStripMenuItem.Text = "Check In";
+            this.checkInToolStripMenuItem.Click += new System.EventHandler(this.CheckInToolStripMenuItem_Click);
+            // 
+            // checkOutToolStripMenuItem
+            // 
+            this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.checkOutToolStripMenuItem.Text = "Check Out";
+            this.checkOutToolStripMenuItem.Click += new System.EventHandler(this.CheckOutToolStripMenuItem_Click);
+            // 
+            // restauranteToolStripMenuItem1
+            // 
+            this.restauranteToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.controlDeMesasToolStripMenuItem,
+            this.producciónToolStripMenuItem});
+            this.restauranteToolStripMenuItem1.Name = "restauranteToolStripMenuItem1";
+            this.restauranteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.restauranteToolStripMenuItem1.Text = "Restaurante";
+            // 
+            // controlDeMesasToolStripMenuItem
+            // 
+            this.controlDeMesasToolStripMenuItem.Name = "controlDeMesasToolStripMenuItem";
+            this.controlDeMesasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.controlDeMesasToolStripMenuItem.Text = "Control de Mesas";
+            this.controlDeMesasToolStripMenuItem.Click += new System.EventHandler(this.ControlDeMesasToolStripMenuItem_Click);
+            // 
+            // producciónToolStripMenuItem
+            // 
+            this.producciónToolStripMenuItem.Name = "producciónToolStripMenuItem";
+            this.producciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.producciónToolStripMenuItem.Text = "Producción";
+            this.producciónToolStripMenuItem.Click += new System.EventHandler(this.ProducciónToolStripMenuItem_Click);
             // 
             // pROCESOSToolStripMenuItem
             // 
@@ -308,49 +369,19 @@
             this.lbl_id_usuario.TabIndex = 4;
             this.lbl_id_usuario.Text = "Usuario Activo";
             // 
-            // hOTELERÍAToolStripMenuItem
+            // logOutToolStripMenuItem
             // 
-            this.hOTELERÍAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.administraciónToolStripMenuItem,
-            this.restauranteToolStripMenuItem1});
-            this.hOTELERÍAToolStripMenuItem.Name = "hOTELERÍAToolStripMenuItem";
-            this.hOTELERÍAToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.hOTELERÍAToolStripMenuItem.Text = "HOTELERÍA";
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.LogOutToolStripMenuItem_Click);
             // 
-            // administraciónToolStripMenuItem
+            // salirToolStripMenuItem
             // 
-            this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reservasToolStripMenuItem,
-            this.checkInToolStripMenuItem,
-            this.checkOutToolStripMenuItem});
-            this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.administraciónToolStripMenuItem.Text = "Administración";
-            // 
-            // restauranteToolStripMenuItem1
-            // 
-            this.restauranteToolStripMenuItem1.Name = "restauranteToolStripMenuItem1";
-            this.restauranteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.restauranteToolStripMenuItem1.Text = "Restaurante";
-            // 
-            // reservasToolStripMenuItem
-            // 
-            this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
-            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reservasToolStripMenuItem.Text = "Reservas";
-            // 
-            // checkOutToolStripMenuItem
-            // 
-            this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.checkOutToolStripMenuItem.Text = "Check Out";
-            // 
-            // checkInToolStripMenuItem
-            // 
-            this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
-            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.checkInToolStripMenuItem.Text = "Check In";
-            this.checkInToolStripMenuItem.Click += new System.EventHandler(this.CheckInToolStripMenuItem_Click);
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // frm_mdi
             // 
@@ -410,10 +441,13 @@
         private System.Windows.Forms.ToolStripMenuItem comandasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem hOTELERÍAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administraciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restauranteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem checkInToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDeMesasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem producciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 

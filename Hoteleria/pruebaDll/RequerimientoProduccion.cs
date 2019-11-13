@@ -14,7 +14,7 @@ namespace Hoteleria
     public partial class RequerimientoProduccion : Form
     {
         conexion conec = new conexion();
-        OdbcConnection conc = new OdbcConnection("Dsn=Navegador");
+        OdbcConnection conc = new OdbcConnection("Dsn=HSC");
         string usuario = "";
 
         public RequerimientoProduccion(string user)
@@ -188,6 +188,11 @@ namespace Hoteleria
                 
             
        
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
